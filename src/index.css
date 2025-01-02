@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .wrapper {
+    @apply max-w-[90rem] mx-auto px-4;
+  }
+  .heading {
+    @apply text-3xl sm:text-5xl font-semibold leading-tight;
+  }
+  .spacebetween {
+    @apply py-[3rem];
+  }
+  .desc {
+    @apply text-sm text-[#D2D2D2];
+  }
+  .secondry-btn {
+    @apply text-primary leading-tight  w-fit px-10 py-3 text-center bg-white rounded-full;
+  }
+  .primary-btn {
+    @apply text-white leading-tight  w-fit px-10 py-3 text-center bg-primary rounded-full;
+  }
+}
