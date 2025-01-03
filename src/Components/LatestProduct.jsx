@@ -1,7 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import { latestProducts } from "../constant";
 import SpecialOffers from "./SpecialOffer";
 
 const LatestProduct = () => {
+  const navigate = useNavigate();
+  const redirect = () => {
+    navigate("/product/123456789");
+  };
   return (
     <div className="min-h-screen bg-black text-white spacebetween">
       {/* Header */}
@@ -28,9 +33,10 @@ const LatestProduct = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {latestProducts.map((product) => (
             <div
+              onClick={redirect}
               data-aos="fade-up"
               key={product.id}
-              className="bg-[#111] rounded-lg overflow-hidden"
+              className="bg-[#111] rounded-lg overflow-hidden cursor-pointer"
             >
               <div className="aspect-square overflow-hidden">
                 <img

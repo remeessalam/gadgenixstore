@@ -48,7 +48,6 @@ const LandingPageProducts = () => {
               ))}
             </div>
             <button className="mt-auto bg-transparent border border-orange-500 text-orange-500 py-2 px-4 rounded-lg hover:bg-orange-500 hover:text-white transition-colors flex items-center justify-center gap-2">
-              <span className="material-icons text-sm">shopping_cart</span>
               Add To Cart
             </button>
           </div>

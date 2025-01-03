@@ -1,7 +1,12 @@
 import { FaStar } from "react-icons/fa";
 import { homeproducts } from "../constant";
+import { useNavigate } from "react-router-dom";
 
 const HomeProduct = () => {
+  const navigate = useNavigate();
+  const redirect = () => {
+    navigate("/product/123456789");
+  };
   return (
     <div className="min-h-screen bg-black">
       <div className="container mx-auto px-4 py-8">
@@ -38,7 +43,8 @@ const HomeProduct = () => {
             <div
               data-aos="fade-up"
               key={product.id}
-              className="bg-black rounded-lg p-4 flex flex-col"
+              className="bg-black rounded-lg p-4 flex flex-col cursor-pointer"
+              onClick={redirect}
             >
               <div className="relative aspect-square mb-4">
                 <img
@@ -67,7 +73,6 @@ const HomeProduct = () => {
                 ))}
               </div>
               <button className="mt-auto bg-transparent border border-orange-500 text-orange-500 py-2 px-4 rounded-lg hover:bg-orange-500 hover:text-white transition-colors flex items-center justify-center gap-2">
-                <span className="material-icons text-sm">shopping_cart</span>
                 Add To Cart
               </button>
             </div>
