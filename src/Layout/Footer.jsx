@@ -194,8 +194,13 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center mb-4 md:mb-0 h-16 w-16 sm:h-20 sm:w-20 rounded-full overflow-hidden">
-            <img src={logo} alt="logo" className="scale-150" />
+          <div className="flex items-center mb-4 md:mb-0 gap-3   overflow-hidden">
+            <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-full overflow-hidden">
+              <img src={logo} alt="logo" className="scale-150 " />
+            </div>
+            <span className="text-lg font-semibold  text-white">
+              Gadgenix Store
+            </span>
           </div>
           <div className="flex space-x-4">
             <img src={cardsimg} alt="PayPal" className="h-8" />

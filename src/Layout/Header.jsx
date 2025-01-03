@@ -23,7 +23,9 @@ const Header = () => {
             <div className="h-16 w-16 sm:h-20 sm:w-20 bg-primary rounded-full  overflow-hidden">
               <img src={logo} alt="logo" className="scale-150 " />
             </div>
-            <h4 className="text-lg font-semibold  text-white">Gadget Store</h4>
+            <h4 className="text-lg font-semibold  text-white">
+              Gadgenix Store
+            </h4>
           </div>
           {/* DESKTOP NAVIGATION */}
           <nav className="hidden md:flex items-center gap-8 md:col-span-4 ml-[6rem]">
