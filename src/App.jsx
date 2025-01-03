@@ -8,6 +8,7 @@ import CheckOutPage from "./Pages/CheckOutPage";
 import CartPage from "./Pages/CartPage";
 import ContactPage from "./Pages/ContactPage";
 import AboutPage from "./Pages/AboutPage";
+import ProductItem from "./Pages/ProductItem";
 
 const AppRouter = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const AppRouter = createBrowserRouter([
       { path: "/cart", element: <CartPage /> },
       { path: "/contact-us", element: <ContactPage /> },
       { path: "/about-us", element: <AboutPage /> },
+      { path: "/product/:id", element: <ProductItem /> },
     ],
   },
 ]);

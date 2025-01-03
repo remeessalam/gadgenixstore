@@ -6,7 +6,7 @@ import returnicon from "../assets/images/icons/return.png";
 const OurWork = () => {
   return (
     <div
-      className="relative bg-no-repeat bg-current bg-cover  min-h-[60vh] -z-20"
+      className="relative bg-no-repeat bg-current bg-cover bg-center  min-h-[70vh] -z-20"
       style={{ backgroundImage: `url(${overworkbgimage})` }}
     >
       <div className="grid md:grid-cols-4 spacebetween wrapper text-white z-10 min-h-[60vh] items-center justify-items-center">

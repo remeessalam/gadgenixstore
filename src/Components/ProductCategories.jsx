@@ -11,7 +11,7 @@ import {
 const ProductCategories = () => {
   return (
     <div className="bg-black py-16 text-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mt-[112px]">
         <h2 className="text-2xl flex justify-center items-center gap-4 md:text-3xl font-bold text-center mb-12 ">
           <span>
             <img src={textdeco} alt="" />
@@ -46,7 +46,7 @@ const ProductCategories = () => {
       <div className="wrapper mt-[4rem]">
         <hr />
         <div
-          className="bg-no-repeat bg-current bg-cover bg-center grid md:grid-cols-2 gap-4 py-[2rem]"
+          className="bg-no-repeat bg-current bg-cover bg-center grid md:grid-cols-2 gap-4 py-[2rem] sm:mt-16 mt-8"
           style={{ backgroundImage: `url(${categroriesbg})` }}
         >
           <div className=" bg-headerbgcolor rounded-lg overflow-hidden">
@@ -55,7 +55,7 @@ const ProductCategories = () => {
               alt="categroygadgetimg1"
               className="w-full object-cover max-h-[18rem]"
             />
-            <div className="p-4 space-y-8 max-h-[280px]">
+            <div className="p-4 space-y-8 max-h-100vh">
               <h3 className="text-2xl">The Best Smart Gadget Bundles</h3>
               <p className="desc">
                 Our exclusive gadget bundles offer the perfect combination of
@@ -76,7 +76,7 @@ const ProductCategories = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="flex bg-headerbgcolor rounded-lg overflow-hidden">
+            <div className="flex lg:flex-row flex-col-reverse bg-headerbgcolor rounded-lg overflow-hidden">
               <div className="flex flex-col justify-between p-4 gap-6">
                 <h3 className="text-2xl">New to Smart Gadgets?</h3>
                 <p>
@@ -91,7 +91,7 @@ const ProductCategories = () => {
                 className="max-h-[18rem]"
               />
             </div>
-            <div className="flex bg-headerbgcolor rounded-lg overflow-hidden">
+            <div className="flex lg:flex-row flex-col-reverse bg-headerbgcolor rounded-lg overflow-hidden">
               <div className="flex flex-col justify-between p-4 gap-6">
                 <h3 className="text-2xl">The Best Smart Gadget Bundles</h3>
                 <p className="desc">

@@ -156,3 +156,62 @@ export const blogs = [
     date: "2 Weeks Ago",
   },
 ];
+
+export const homeproducts = [
+  {
+    id: 1,
+    title: "Retractable Car Charger For Android / Iphone",
+    image: "/placeholder.svg?height=400&width=400",
+    originalPrice: 74.5,
+    salePrice: 49.5,
+  },
+  {
+    id: 2,
+    title: "Portable Blender-500 Watts (3 Jars, Silver)",
+    image: "/placeholder.svg?height=400&width=400",
+    originalPrice: 74.5,
+    salePrice: 49.5,
+  },
+  {
+    id: 3,
+    title: "Bike GPS Tracking Device For Car,Bikes",
+    image: "/placeholder.svg?height=400&width=400",
+    originalPrice: 74.5,
+    salePrice: 49.5,
+  },
+  {
+    id: 4,
+    title: "Multi-Functional Electric Scalp Massager",
+    image: "/placeholder.svg?height=400&width=400",
+    originalPrice: 74.5,
+    salePrice: 49.5,
+  },
+  {
+    id: 5,
+    title: "3-In-1 Magenetic Charger",
+    image: "/placeholder.svg?height=400&width=400",
+    originalPrice: 74.5,
+    salePrice: 49.5,
+  },
+  {
+    id: 6,
+    title: "Magnetic Wireless Charge",
+    image: "/placeholder.svg?height=400&width=400",
+    originalPrice: 74.5,
+    salePrice: 49.5,
+  },
+  {
+    id: 7,
+    title: "Charger Docker",
+    image: "/placeholder.svg?height=400&width=400",
+    originalPrice: 74.5,
+    salePrice: 49.5,
+  },
+  {
+    id: 8,
+    title: "Magnetic Charger For Iphone",
+    image: "/placeholder.svg?height=400&width=400",
+    originalPrice: 74.5,
+    salePrice: 49.5,
+  },
+];

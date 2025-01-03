@@ -22,3 +22,16 @@
     @apply text-white leading-tight  w-fit px-10 py-3 text-center bg-primary rounded-full;
   }
 }
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 15s linear infinite;
+}
