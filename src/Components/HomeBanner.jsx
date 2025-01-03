@@ -25,7 +25,7 @@ const HomeBanner = () => {
   return (
     <div className="h-smbannerheight sm:h-bannerheight pt-[96px] sm:pt-[112px] bg-black text-white">
       {/* Hero Section */}
-      <div className="relative h-bannerheight overflow-hidden">
+      <div className="relative h-smbannerheight sm:h-bannerheight overflow-hidden">
         {/* Background Image with Fade Effect */}
         <div
           className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
@@ -42,9 +42,11 @@ const HomeBanner = () => {
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 pt-16">
-          <div data-aos="fade-up" className="flex space-x-2 text-orange-500">
+          <div data-aos="fade-up" className="flex space-x-2 text-white">
             <GiFlame className="w-6 h-6" />
-            <span className="font-semibold mt-1">GET 25% OFF NOW</span>
+            <span className="font-semibold mt-1">
+              GET <span className="text-primarytextcolor">25% OFF</span> NOW
+            </span>
           </div>
 
           <div className="mt-8 max-w-4xl">
@@ -52,23 +54,12 @@ const HomeBanner = () => {
               data-aos="fade-up"
               className="text-4xl md:text-6xl font-bold mb-4"
             >
-              Discover The Future Of{" "}
-              <span className="text-orange-500">Smart Living.</span>
+              Discover The Future Of
+              <span className="text-primary">Smart Living.</span>
             </h1>
 
-            <p
-              data-aos="fade-up"
-              className="text-lg md:text-xl mb-8 text-gray-300"
-            >
-              Embrace Innovation And Style With Cutting-Edge Gadgets Designed To
-              Simplify Your World.
-            </p>
-
             <div className="flex flex-wrap gap-4 mb-8">
-              <button
-                data-aos="fade-up"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full transition-colors"
-              >
+              <button data-aos="fade-up" className="primary-btn">
                 Shop Now
               </button>
               <button
@@ -78,13 +69,21 @@ const HomeBanner = () => {
                 View Details
               </button>
             </div>
+            <p
+              data-aos="fade-up"
+              className="text-lg md:text-xl mb-8 text-gray-300"
+            >
+              Embrace innovation and elevate your lifestyle with cutting-edge
+              gadgets designed to simplify your world. Discover smarter,
+              seamless solutions for modern living at Gadgenix.store
+            </p>
 
-            <div
+            {/* <div
               data-aos="fade-up"
               className="inline-block bg-purple-600/20 px-4 py-2 rounded-lg"
             >
               <span className="text-purple-300">90 Hug × 28 Hug</span>
-            </div>
+            </div> */}
 
             <div className="mt-8">
               <div data-aos="fade-up" className="text-2xl font-bold">
@@ -92,7 +91,7 @@ const HomeBanner = () => {
               </div>
               <div
                 data-aos="fade-up"
-                className="text-4xl font-bold text-orange-500"
+                className="text-4xl mt-4 mb-4 sm:mb-0 font-bold text-orange-500"
               >
                 $99.00
               </div>

@@ -18,25 +18,26 @@ const Header = () => {
   return (
     <header className="fixed w-screen overflow-hidden bg-headerbgcolor py-4 px-6 text-white z-40">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-primary overflow-hidden">
-            <img src={logo} alt="logo" className="scale-150" />
+        <div className="w-full grid md:grid-cols-6 items-center gap-2">
+          <div className="md:col-span-2  flex items-center gap-3">
+            <div className="h-16 w-16 sm:h-20 sm:w-20 bg-primary rounded-full  overflow-hidden">
+              <img src={logo} alt="logo" className="scale-150 " />
+            </div>
+            <h4 className="text-lg font-semibold  text-white">Gadget Store</h4>
           </div>
-          <span className="text-lg font-semibold">Gadget Store</span>
+          {/* DESKTOP NAVIGATION */}
+          <nav className="hidden md:flex items-center gap-8 md:col-span-4 ml-[6rem]">
+            {routes.map((obj) => (
+              <Link
+                key={obj.name}
+                to={obj.path}
+                className="text-foreground hover:text-primary"
+              >
+                {obj.name}
+              </Link>
+            ))}
+          </nav>
         </div>
-
-        {/* DESKTOP NAVIGATION */}
-        <nav className="hidden md:flex items-center gap-8">
-          {routes.map((obj) => (
-            <Link
-              key={obj.name}
-              to={obj.path}
-              className="text-foreground hover:text-primary"
-            >
-              {obj.name}
-            </Link>
-          ))}
-        </nav>
 
         {/* MOBILE MENU ICON */}
         <TiThMenu
@@ -46,14 +47,14 @@ const Header = () => {
 
         {/* MOBILE NAVIGATION */}
         {mobileNavOpen && (
-          <div className="fixed top-0 left-0 w-full h-full bg-headerbgcolor z-50 flex flex-col items-center justify-center">
+          <div className="fixed top-0 left-0 w-full h-full bg-headerbgcolor z-50 flex flex-col items-start p-8">
             <button
               onClick={closeMobileNav}
               className="absolute top-4 right-4 text-white text-lg font-semibold"
             >
               <IoMdClose />
             </button>
-            <nav className="flex flex-col items-center gap-8">
+            <nav className="flex flex-col items-start gap-8">
               {routes.map((obj) => (
                 <Link
                   key={obj.name}

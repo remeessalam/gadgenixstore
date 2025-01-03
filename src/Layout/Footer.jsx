@@ -1,5 +1,6 @@
 import { logo } from "../constant";
 import footerimage from "../assets/images/footerimage.jpeg";
+import cardsimg from "../assets/images/cardsimg.png";
 const Footer = () => {
   return (
     <footer
@@ -197,10 +198,7 @@ const Footer = () => {
             <img src={logo} alt="logo" className="scale-150" />
           </div>
           <div className="flex space-x-4">
-            <img src="/paypal.png" alt="PayPal" className="h-8" />
-            <img src="/mastercard.png" alt="Mastercard" className="h-8" />
-            <img src="/discover.png" alt="Discover" className="h-8" />
-            <img src="/visa.png" alt="Visa" className="h-8" />
+            <img src={cardsimg} alt="PayPal" className="h-8" />
           </div>
         </div>
       </div>

@@ -13,10 +13,11 @@ const CheckoutForm = () => {
 
   return (
     <div className=" bg-black spacebetween">
-      <div className="wrapper">
+      <div className="max-w-[50rem] mx-auto px-4 ">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className=" grid gap-8 md:grid-cols-[1.5fr,1fr]"
+          // [1.5fr,1fr]
+          className=" grid gap-8 md:grid-cols-1  pt-20"
         >
           {/* Billing Details Section */}
           <div className="space-y-4 bg-[#1a1a1a] rounded-lg  p-6">

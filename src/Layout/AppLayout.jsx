@@ -12,7 +12,9 @@ const AppLayout = () => {
   return (
     <div>
       <Header />
-      <Outlet />
+      <div className="w-screen overflow-hidden">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
