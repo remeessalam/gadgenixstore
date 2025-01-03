@@ -30,14 +30,17 @@ const SpecialOffers = () => {
   return (
     <div className="w-full mx-auto sm:mx-0 max-w-[300px] bg-headerbgcolor text-white p-4 h-fit">
       {/* Special Offer Header */}
-      <h2 className="text-xl font-semibold mb-4 pb-2 border-b border-primary">
+      <h2
+        data-aos="fade-right"
+        className="text-xl font-semibold mb-4 pb-2 border-b border-primary"
+      >
         Special Offer
       </h2>
 
       {/* Products */}
       <div className="space-y-6">
         {products.map((product) => (
-          <div key={product.id} className="space-y-2">
+          <div data-aos="fade-right" key={product.id} className="space-y-2">
             <div className="aspect-square bg-gray-800 rounded-lg overflow-hidden">
               <img
                 src={product.image}
@@ -70,7 +73,7 @@ const SpecialOffers = () => {
       </div>
 
       {/* Hurry Up Section */}
-      <div className="mt-6">
+      <div data-aos="fade-right" className="mt-6">
         <h3 className="text-lg font-semibold mb-2">Hurry Up!</h3>
         <p className="text-sm text-gray-400 mb-4">Offer Ends in</p>
         <div className="grid grid-cols-4 gap-2">

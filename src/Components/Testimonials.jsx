@@ -20,8 +20,10 @@ const Testimonials = () => {
     <section className="bg-black text-white py-16">
       <div className="wrapper">
         <div className="flex items-center justify-between mb-12">
-          <h2 className="heading flex items-center">Customers Speak For Us</h2>
-          <div className="flex gap-2">
+          <h2 data-aos="fade-up" className="heading flex items-center">
+            Customers Speak For Us
+          </h2>
+          <div data-aos="fade-up" className="flex gap-2">
             <button
               onClick={prevTestimonial}
               className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-orange-500 transition-colors"
@@ -38,7 +40,7 @@ const Testimonials = () => {
         </div>
 
         <div className="flex sm:flex-row flex-col items-center gap-8">
-          <div className="flex-1">
+          <div data-aos="fade-right" className="flex-1">
             <h3 className="text-2xl font-bold mb-2">{current.name}</h3>
             <p className="text-orange-500 mb-4">{current.position}</p>
             <div className="relative">
@@ -57,7 +59,10 @@ const Testimonials = () => {
               </p>
             </div>
           </div>
-          <div className="w-40 h-40 sm:w-80 sm:h-80 flex-shrink-0">
+          <div
+            data-aos="fade-left"
+            className="w-40 h-40 sm:w-80 sm:h-80 flex-shrink-0"
+          >
             <img
               src={current.image}
               alt={current.name}

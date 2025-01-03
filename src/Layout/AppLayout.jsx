@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 const AppLayout = () => {
   Aos.init({
     once: true,
-    duration: 500,
+    duration: 1000,
     offset: -50,
   });
   return (

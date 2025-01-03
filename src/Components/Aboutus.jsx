@@ -10,6 +10,7 @@ const Aboutus = () => {
     <div className="bg-black spacebetween">
       <div className="w-full grid md:grid-cols-2 wrapper">
         <div
+          data-aos="fade-right"
           onClick={() => setIsPlaying(!isPlaying)}
           className="h-[18vh] sm:h-[44vh]  relative w-full"
         >
@@ -50,17 +51,19 @@ const Aboutus = () => {
           </div>
         </div>
         <div className="text-white h-full flex flex-col space-y-5 sm:space-y-10 px-4">
-          <h3 className="heading sm:mt-0 mt-5">
+          <h3 data-aos="fade-left" className="heading sm:mt-0 mt-5">
             We Are Here to Enhance Your Modern Life
           </h3>
-          <p className="desc">
+          <p data-aos="fade-left" className="desc">
             At Gadgenix.store, we are committed to revolutionizing the way you
             live with smart gadgets designed to simplify and elevate your daily
             routines. Our mission is to seamlessly integrate cutting-edge
             technology into your lifestyle, empowering you to achieve more with
             ease and efficiency.
           </p>
-          <button className="primary-btn">More About us</button>
+          <button data-aos="fade-left" className="primary-btn">
+            More About us
+          </button>
         </div>
       </div>
     </div>

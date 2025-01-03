@@ -5,7 +5,12 @@ const PageBanner = ({ image, title, style }) => {
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="absolute w-screen h-full bg-black/50 top-0 left-0 " />
-      <h1 className="text-[2.5rem] font-semibold text-white z-10">{title}</h1>
+      <h1
+        data-aos="fade-up"
+        className="text-[2.5rem] font-semibold text-white z-10"
+      >
+        {title}
+      </h1>
     </div>
   );
 };

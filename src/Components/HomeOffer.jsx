@@ -1,30 +1,31 @@
+import product1 from "../assets/images/homeproducts/homeproduct1.png";
 function OfferZone() {
   const products = [
     {
       title: "All-In-One Charger",
       description: "Best All-In-One Charger In The Market",
-      image: "/placeholder.svg?height=400&width=400",
+      image: product1,
       discount: "50% OFF",
       buttonText: "Shop Now",
     },
     {
       title: "Wireless Charger",
       description: "Best Wireless Chargers From Our Huge Collection",
-      image: "/placeholder.svg?height=400&width=400",
+      image: product1,
       discount: "50% OFF",
       buttonText: "Shop Now",
     },
     {
       title: "Charging Dock",
       description: "Best Charging Dock From Our Huge Collection",
-      image: "/placeholder.svg?height=400&width=400",
+      image: product1,
       discount: "50% OFF",
       buttonText: "Shop Now",
     },
     {
       title: "Charging Station",
       description: "Best Charging Station From Our Huge Collection",
-      image: "/placeholder.svg?height=400&width=400",
+      image: product1,
       discount: "50% OFF",
       buttonText: "Shop Now",
     },
@@ -34,7 +35,11 @@ function OfferZone() {
     <div className="bg-black spacebetween">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 bg-black wrapper ">
         {products.map((product, index) => (
-          <div key={index} className="relative rounded-lg overflow-hidden">
+          <div
+            data-aos="fade-up"
+            key={index}
+            className="relative rounded-lg overflow-hidden"
+          >
             {/* Discount Badge */}
             <div className="absolute top-4 right-4 bg-white rounded-full p-2 z-10">
               <span className="text-orange-500 font-medium text-sm">

@@ -42,38 +42,60 @@ const HomeBanner = () => {
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 pt-16">
-          <div className="flex space-x-2 text-orange-500">
+          <div data-aos="fade-up" className="flex space-x-2 text-orange-500">
             <GiFlame className="w-6 h-6" />
             <span className="font-semibold mt-1">GET 25% OFF NOW</span>
           </div>
 
           <div className="mt-8 max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <h1
+              data-aos="fade-up"
+              className="text-4xl md:text-6xl font-bold mb-4"
+            >
               Discover The Future Of{" "}
               <span className="text-orange-500">Smart Living.</span>
             </h1>
 
-            <p className="text-lg md:text-xl mb-8 text-gray-300">
+            <p
+              data-aos="fade-up"
+              className="text-lg md:text-xl mb-8 text-gray-300"
+            >
               Embrace Innovation And Style With Cutting-Edge Gadgets Designed To
               Simplify Your World.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full transition-colors">
+              <button
+                data-aos="fade-up"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full transition-colors"
+              >
                 Shop Now
               </button>
-              <button className="border border-white hover:bg-white/10 text-white px-8 py-3 rounded-full transition-colors">
+              <button
+                data-aos="fade-up"
+                className="border border-white hover:bg-white/10 text-white px-8 py-3 rounded-full transition-colors"
+              >
                 View Details
               </button>
             </div>
 
-            <div className="inline-block bg-purple-600/20 px-4 py-2 rounded-lg">
+            <div
+              data-aos="fade-up"
+              className="inline-block bg-purple-600/20 px-4 py-2 rounded-lg"
+            >
               <span className="text-purple-300">90 Hug × 28 Hug</span>
             </div>
 
             <div className="mt-8">
-              <div className="text-2xl font-bold">Starting Price</div>
-              <div className="text-4xl font-bold text-orange-500">$99.00</div>
+              <div data-aos="fade-up" className="text-2xl font-bold">
+                Starting Price
+              </div>
+              <div
+                data-aos="fade-up"
+                className="text-4xl font-bold text-orange-500"
+              >
+                $99.00
+              </div>
             </div>
           </div>
         </div>

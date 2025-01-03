@@ -50,7 +50,7 @@ const ProductCarousel = () => {
       <div className="wrapper grid md:grid-cols-2 text-white">
         {/* Header Section */}
         <div className="mb-8  flex flex-col justify-center gap-4">
-          <div className="flex items-center gap-2 mb-4">
+          <div data-aos="fade-up" className="flex items-center gap-2 mb-4">
             <span role="img" aria-label="fire">
               🔥
             </span>
@@ -59,19 +59,16 @@ const ProductCarousel = () => {
             </span>
           </div>
 
-          <div className="flex items-center gap-2 mb-4">
-            <span role="img" aria-label="moon">
-              🌙
-            </span>
+          <div data-aos="fade-up" className="flex items-center gap-2 mb-4">
             <h1 className="text-4xl font-bold">Latest Arrival Products</h1>
           </div>
 
-          <div className="mb-4">
+          <div data-aos="fade-up" className="mb-4">
             <span className="text-gray-500 line-through mr-2">$99.00</span>
             <span className="text-2xl font-bold">$49.00</span>
           </div>
 
-          <p className="text-gray-300 mb-6 max-w-2xl">
+          <p data-aos="fade-up" className="text-gray-300 mb-6 max-w-2xl">
             Stay Ahead Of The Tech Curve With Our Latest Arrivals. At
             Gadgenix.Store, We&apos;re Always Adding Innovative Gadgets To Our
             Collection To Keep You Updated With The Newest Trends In Smart
@@ -79,21 +76,23 @@ const ProductCarousel = () => {
           </p>
 
           <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4">HUNGRY UP !</h3>
+            <h3 className="text-xl font-bold mb-4" data-aos="fade-up">
+              HUNGRY UP !
+            </h3>
             <div className="flex gap-4">
-              <div className="text-center">
+              <div data-aos="fade-up" className="text-center">
                 <div className="text-2xl font-bold">-{timeLeft.days}</div>
                 <div className="text-sm text-gray-400">Day</div>
               </div>
-              <div className="text-center">
+              <div data-aos="fade-up" className="text-center">
                 <div className="text-2xl font-bold">-{timeLeft.hours}</div>
                 <div className="text-sm text-gray-400">Hr</div>
               </div>
-              <div className="text-center">
+              <div data-aos="fade-up" className="text-center">
                 <div className="text-2xl font-bold">-{timeLeft.minutes}</div>
                 <div className="text-sm text-gray-400">Min</div>
               </div>
-              <div className="text-center">
+              <div data-aos="fade-up" className="text-center">
                 <div className="text-2xl font-bold">-{timeLeft.seconds}</div>
                 <div className="text-sm text-gray-400">Sec</div>
               </div>
@@ -102,7 +101,7 @@ const ProductCarousel = () => {
         </div>
 
         {/* Product Image Carousel */}
-        <div className="relative ">
+        <div data-aos="fade-left" className="relative ">
           <div className="aspect-square rounded-full overflow-hidden border-8 border-gray-800 relative">
             <img
               src={images[currentImageIndex]}

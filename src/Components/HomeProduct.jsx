@@ -6,17 +6,29 @@ const HomeProduct = () => {
     <div className="min-h-screen bg-black">
       <div className="container mx-auto px-4 py-8">
         <div className="flex md:flex-row flex-col items-center justify-between mb-8">
-          <h1 className="text-white text-3xl font-bold flex items-center gap-2">
+          <h1
+            data-aos="fade-right"
+            className="text-white text-3xl font-bold flex items-center gap-2"
+          >
             Latest Arrival Products
           </h1>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <button className="text-orange-500 hover:text-white">
+            <button
+              data-aos="fade-left"
+              className="text-orange-500 hover:text-white"
+            >
               Latest Item
             </button>
-            <button className="text-gray-500 hover:text-white">
+            <button
+              data-aos="fade-left"
+              className="text-gray-500 hover:text-white"
+            >
               Top Rating
             </button>
-            <button className="text-gray-500 hover:text-white">
+            <button
+              data-aos="fade-left"
+              className="text-gray-500 hover:text-white"
+            >
               Featured Products
             </button>
           </div>
@@ -24,6 +36,7 @@ const HomeProduct = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {homeproducts.map((product) => (
             <div
+              data-aos="fade-up"
               key={product.id}
               className="bg-black rounded-lg p-4 flex flex-col"
             >

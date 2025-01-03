@@ -12,7 +12,10 @@ const ProductCategories = () => {
   return (
     <div className="bg-black py-16 text-white">
       <div className="container mx-auto px-4 mt-[112px]">
-        <h2 className="text-2xl flex justify-center items-center gap-4 md:text-3xl font-bold text-center mb-12 ">
+        <h2
+          data-aos="fade-up"
+          className="text-2xl flex justify-center items-center gap-4 md:text-3xl font-bold text-center mb-12 "
+        >
           <span>
             <img src={textdeco} alt="" />
           </span>{" "}
@@ -25,6 +28,7 @@ const ProductCategories = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {categories.map((category, index) => (
             <div
+              data-aos="fade-up"
               key={index}
               className="flex flex-col items-center group cursor-pointer"
             >
@@ -49,7 +53,10 @@ const ProductCategories = () => {
           className="bg-no-repeat bg-current bg-cover bg-center grid md:grid-cols-2 gap-4 py-[2rem] sm:mt-16 mt-8"
           style={{ backgroundImage: `url(${categroriesbg})` }}
         >
-          <div className=" bg-headerbgcolor rounded-lg overflow-hidden">
+          <div
+            data-aos="fade-right"
+            className=" bg-headerbgcolor rounded-lg overflow-hidden"
+          >
             <img
               src={categroygadgetimg1}
               alt="categroygadgetimg1"
@@ -76,7 +83,10 @@ const ProductCategories = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="flex lg:flex-row flex-col-reverse bg-headerbgcolor rounded-lg overflow-hidden">
+            <div
+              data-aos="fade-left"
+              className="flex lg:flex-row flex-col-reverse bg-headerbgcolor rounded-lg overflow-hidden"
+            >
               <div className="flex flex-col justify-between p-4 gap-6">
                 <h3 className="text-2xl">New to Smart Gadgets?</h3>
                 <p>
@@ -91,7 +101,10 @@ const ProductCategories = () => {
                 className="max-h-[18rem]"
               />
             </div>
-            <div className="flex lg:flex-row flex-col-reverse bg-headerbgcolor rounded-lg overflow-hidden">
+            <div
+              data-aos="fade-left"
+              className="flex lg:flex-row flex-col-reverse bg-headerbgcolor rounded-lg overflow-hidden"
+            >
               <div className="flex flex-col justify-between p-4 gap-6">
                 <h3 className="text-2xl">The Best Smart Gadget Bundles</h3>
                 <p className="desc">

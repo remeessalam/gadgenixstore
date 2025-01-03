@@ -11,7 +11,10 @@ const OurWork = () => {
     >
       <div className="grid md:grid-cols-4 spacebetween wrapper text-white z-10 min-h-[60vh] items-center justify-items-center">
         <div className="space-y-10 w-full">
-          <div className="flex items-center  gap-1 sm:gap-4 space-x-4">
+          <div
+            data-aos="fade-right"
+            className="flex items-center  gap-1 sm:gap-4 space-x-4"
+          >
             <div className="rounded-full border border-primary p-5 sm:w-24 sm:h-24 w-16  h-16 flex justify-center items-center">
               <img src={freedelivery} alt="" />{" "}
             </div>
@@ -20,7 +23,10 @@ const OurWork = () => {
               <p>For all orders above $45</p>
             </div>
           </div>
-          <div className="flex items-center  gap-1 sm:gap-4 space-x-4">
+          <div
+            data-aos="fade-right"
+            className="flex items-center  gap-1 sm:gap-4 space-x-4"
+          >
             <div className="rounded-full border border-primary p-5 sm:w-24 sm:h-24 w-16  h-16 flex justify-center items-center">
               <img src={payment} alt="" />
             </div>
@@ -32,10 +38,15 @@ const OurWork = () => {
         </div>
         <div className="md:col-span-2 text-center">
           {" "}
-          <h1 className="heading md:my-0 my-5">Sign Up & Save 25%</h1>
+          <h1 data-aos="fade-up" className="heading md:my-0 my-5">
+            Sign Up & Save 25%
+          </h1>
         </div>
         <div className="space-y-10 w-full ">
-          <div className="flex items-center  gap-1 sm:gap-4 space-x-4">
+          <div
+            data-aos="fade-left"
+            className="flex items-center  gap-1 sm:gap-4 space-x-4"
+          >
             <div className="rounded-full border border-primary p-5 sm:w-24 sm:h-24 w-16  h-16 flex justify-center items-center">
               <img src={support} alt="" />{" "}
             </div>
@@ -44,7 +55,10 @@ const OurWork = () => {
               <p>sayhello&gazacom</p>
             </div>
           </div>
-          <div className="flex items-center  gap-1 sm:gap-4 space-x-4">
+          <div
+            data-aos="fade-left"
+            className="flex items-center  gap-1 sm:gap-4 space-x-4"
+          >
             <div className="rounded-full border border-primary p-5 sm:w-24 sm:h-24 w-16  h-16 flex justify-center items-center">
               <img src={returnicon} alt="" />
             </div>

@@ -17,6 +17,7 @@ const LandingPageProducts = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 wrapper spacebetween">
         {homeproducts.map((product) => (
           <div
+            data-aos="fade-up"
             key={product.id}
             className="bg-black rounded-lg p-4 flex flex-col"
           >
@@ -53,7 +54,10 @@ const LandingPageProducts = () => {
           </div>
         ))}
       </div>
-      <div className="wrapper bg-black flex flex-col items-center justify-center p-4">
+      <div
+        data-aos="fade-up"
+        className="wrapper bg-black flex flex-col items-center justify-center p-4"
+      >
         <div className="text-coral-500 mb-8">
           <BiEnvelopeOpen size={48} className="text-[#e86d5c]" />
         </div>

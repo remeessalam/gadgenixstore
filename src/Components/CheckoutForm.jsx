@@ -20,10 +20,13 @@ const CheckoutForm = () => {
         >
           {/* Billing Details Section */}
           <div className="space-y-4 bg-[#1a1a1a] rounded-lg  p-6">
-            <h2 className="mb-6 text-2xl font-semibold text-white">
+            <h2
+              data-aos="fade-up"
+              className="mb-6 text-2xl font-semibold text-white"
+            >
               Billing Details
             </h2>
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 Your Name <span className="text-red-500">*</span>
               </label>
@@ -33,7 +36,7 @@ const CheckoutForm = () => {
               />
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 Email Address <span className="text-red-500">*</span>
               </label>
@@ -44,7 +47,7 @@ const CheckoutForm = () => {
               />
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 Company Name (Optional)
               </label>
@@ -54,7 +57,7 @@ const CheckoutForm = () => {
               />
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 Country / Region <span className="text-red-500">*</span>
               </label>
@@ -68,7 +71,7 @@ const CheckoutForm = () => {
               </select>
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 Street Address <span className="text-red-500">*</span>
               </label>
@@ -79,7 +82,7 @@ const CheckoutForm = () => {
               />
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 Town / City <span className="text-red-500">*</span>
               </label>
@@ -89,7 +92,7 @@ const CheckoutForm = () => {
               />
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 State <span className="text-red-500">*</span>
               </label>
@@ -103,7 +106,7 @@ const CheckoutForm = () => {
               </select>
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 ZIP Code <span className="text-red-500">*</span>
               </label>
@@ -113,7 +116,7 @@ const CheckoutForm = () => {
               />
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 Phone <span className="text-red-500">*</span>
               </label>
@@ -125,7 +128,7 @@ const CheckoutForm = () => {
             </div>
 
             <div className="space-y-2">
-              <div className="flex items-center gap-2">
+              <div data-aos="fade-up" className="flex items-center gap-2">
                 <input
                   type="checkbox"
                   {...register("createAccount")}
@@ -133,7 +136,7 @@ const CheckoutForm = () => {
                 />
                 <label className="text-sm text-white">Create An Account?</label>
               </div>
-              <div className="flex items-center gap-2">
+              <div data-aos="fade-up" className="flex items-center gap-2">
                 <input
                   type="checkbox"
                   {...register("differentAddress")}
@@ -145,7 +148,7 @@ const CheckoutForm = () => {
               </div>
             </div>
 
-            <div>
+            <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 Order Notes (Optional)
               </label>
@@ -160,16 +163,19 @@ const CheckoutForm = () => {
 
           {/* Order Summary Section */}
           <div className="rounded-lg bg-[#1a1a1a] p-6">
-            <h2 className="mb-6 text-2xl font-semibold text-white">
+            <h2
+              data-aos="fade-up"
+              className="mb-6 text-2xl font-semibold text-white"
+            >
               Your Order
             </h2>
-            <div className="space-y-4">
+            <div data-aos="fade-up" className="space-y-4">
               <div className="flex justify-between border-b border-gray-700 pb-2">
                 <span className="font-medium text-white">Products</span>
                 <span className="font-medium text-white">Subtotal</span>
               </div>
 
-              <div className="space-y-2">
+              <div data-aos="fade-up" className="space-y-2">
                 <div className="flex justify-between text-gray-300">
                   <span>Charging Dock</span>
                   <span>$15.00</span>
@@ -192,12 +198,15 @@ const CheckoutForm = () => {
                 </div>
               </div>
 
-              <div className="flex justify-between border-t border-gray-700 pt-2">
+              <div
+                data-aos="fade-up"
+                className="flex justify-between border-t border-gray-700 pt-2"
+              >
                 <span className="font-medium text-white">Subtotal</span>
                 <span className="font-medium text-white">$75.00</span>
               </div>
 
-              <div className="rounded bg-[#222] p-4">
+              <div data-aos="fade-up" className="rounded bg-[#222] p-4">
                 <h3 className="mb-2 font-medium text-white">
                   Shipping Address
                 </h3>
@@ -207,7 +216,7 @@ const CheckoutForm = () => {
               </div>
 
               <div className="space-y-2">
-                <div className="flex items-center gap-2">
+                <div data-aos="fade-up" className="flex items-center gap-2">
                   <input
                     type="radio"
                     name="payment"
@@ -218,7 +227,7 @@ const CheckoutForm = () => {
                     Direct Bank Transfer
                   </label>
                 </div>
-                <div className="flex items-center gap-2">
+                <div data-aos="fade-up" className="flex items-center gap-2">
                   <input
                     type="radio"
                     name="payment"
@@ -227,7 +236,7 @@ const CheckoutForm = () => {
                   />
                   <label className="text-sm text-white">Check Payments</label>
                 </div>
-                <div className="flex items-center gap-2">
+                <div data-aos="fade-up" className="flex items-center gap-2">
                   <input
                     type="radio"
                     name="payment"
@@ -238,12 +247,12 @@ const CheckoutForm = () => {
                 </div>
               </div>
 
-              <p className="text-sm text-gray-300">
+              <p data-aos="fade-up" className="text-sm text-gray-300">
                 Your Personal Data Will Be Used To Process Your Order, Support
                 Your Experience Throughout This Website.
               </p>
 
-              <button type="submit" className="primary-btn">
+              <button data-aos="fade-up" type="submit" className="primary-btn">
                 Place Order
               </button>
             </div>

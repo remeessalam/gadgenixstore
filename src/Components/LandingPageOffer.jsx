@@ -24,33 +24,37 @@ const LandingPageOffer = () => {
       <div className="space-y-8 grid md:grid-cols-2 wrapper text-white spacebetween">
         {/* Deal of the Day Section */}
         <div className="space-y-4 flex flex-col justify-center">
-          <div className="">
+          <div data-aos="fade-up" className="">
             <span className="bg-primary text-black text-sm px-3 py-1 rounded">
               New in Store
             </span>
           </div>
-          <h2 className="text-4xl font-bold">Deal of the Day</h2>
+          <h2 data-aos="fade-up" className="text-4xl font-bold">
+            Deal of the Day
+          </h2>
           <div className="flex gap-4">
-            <div className="text-center">
+            <div data-aos="fade-up" className="text-center">
               <div className="text-xl">{timeLeft.days}</div>
               <div className="text-sm text-[#FF6B6B]">Days</div>
             </div>
-            <div className="text-center">
+            <div data-aos="fade-up" className="text-center">
               <div className="text-xl">{timeLeft.hours}</div>
               <div className="text-sm text-[#FF6B6B]">Hours</div>
             </div>
-            <div className="text-center">
+            <div data-aos="fade-up" className="text-center">
               <div className="text-xl">{timeLeft.mins}</div>
               <div className="text-sm text-[#FF6B6B]">Mins</div>
             </div>
-            <div className="text-center">
+            <div data-aos="fade-up" className="text-center">
               <div className="text-xl">{timeLeft.secs}</div>
               <div className="text-sm text-[#FF6B6B]">Secs</div>
             </div>
           </div>
-          <button className="primary-btn">Buy Now →</button>
+          <button data-aos="fade-up" className="primary-btn">
+            Buy Now →
+          </button>
         </div>
-        <div className="">
+        <div data-aos="fade-up" className="">
           <img
             src={landingpagebanner}
             alt="Foldable wireless charger"
@@ -59,14 +63,17 @@ const LandingPageOffer = () => {
         </div>
       </div>
       <div className="wrapper grid md:grid-cols-2 spacebetween text-white gap-8">
-        <div>
+        <div data-aos="fade-right">
           <img
             src={landingpageimage}
             alt="Wireless charger on wooden surface"
             className="w-full rounded-lg object-cover max-h-[500px]"
           />
         </div>
-        <div className="space-y-4 flex flex-col justify-center items-center">
+        <div
+          data-aos="fade-left"
+          className="space-y-4 flex flex-col justify-center items-center"
+        >
           <h1 className="text-4xl font-bold">Mac Safe Wireless Charger</h1>
           <div className="text-primary">LIMITED OFFER 25% OFF!</div>
           <p className="text-gray-400">
@@ -85,11 +92,14 @@ const LandingPageOffer = () => {
       >
         <div className="bg-black/50 -z-10 absolute top-0 left-0 h-full w-full" />
         <div className="ml-auto flex flex-col justify-center">
-          <h1 className="text-start heading text-primarytextcolor">
+          <h1
+            data-aos="fade-up"
+            className="text-start heading text-primarytextcolor"
+          >
             {" "}
             Empowering a Busy Professional in Pune{" "}
           </h1>
-          <p className="max-w-[40rem] desc !text-white mt-8">
+          <p data-aos="fade-up" className="max-w-[40rem] desc !text-white mt-8">
             Priya, a marketing executive from Pune, found her perfect
             work-from-home companion with our Magnetic Wireless Charging
             Station. She shares: “I no longer have to juggle wires or worry

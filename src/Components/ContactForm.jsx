@@ -15,27 +15,24 @@ const ContactForm = () => {
     // Handle form submission here
   };
 
-  const subjects = [
-    "General Inquiry",
-    "Technical Support",
-    "Business Proposal",
-    "Other",
-  ];
-
   return (
     <div className=" bg-black text-white spacebetween">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Section */}
           <div
+            data-aos="fade-up"
             className="space-y-8 w-full h-full p-4 rounded-xl bg-current bg-no-repeat bg-center bg-cover"
             style={{ backgroundImage: `url(${cantactusimage})` }}
           >
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">
+              <h1
+                data-aos="fade-up"
+                className="text-4xl md:text-5xl font-bold mb-2"
+              >
                 Have Something In Mind?
               </h1>
-              <h2 className="text-4xl md:text-5xl font-bold">
+              <h2 data-aos="fade-up" className="text-4xl md:text-5xl font-bold">
                 Let&apos;s Talk.
               </h2>
             </div>
@@ -46,7 +43,7 @@ const ContactForm = () => {
                 alt="contactusicons"
                 className="w-16 h-fit max-h-[60px]"
               />
-              <div className="flex items-start space-x-4">
+              <div data-aos="fade-up" className="flex items-start space-x-4">
                 <div className="mt-1">
                   <IoLocationSharp className="text-white" />
                 </div>
@@ -55,13 +52,13 @@ const ContactForm = () => {
                 </p>
               </div>
 
-              <div className="flex items-center space-x-4">
+              <div data-aos="fade-up" className="flex items-center space-x-4">
                 <BiSolidPhoneCall className="text-white" />
 
                 <p className="text-gray-300">+91 - 7010916928</p>
               </div>
 
-              <div className="flex items-center space-x-4">
+              <div data-aos="fade-up" className="flex items-center space-x-4">
                 <IoMail className="text-white" />
 
                 <p className="text-gray-300">Mail-Gadgetsstore@gmail.Com</p>
@@ -72,7 +69,7 @@ const ContactForm = () => {
           {/* Right Section - Form */}
           <div className=" px-8 rounded-lg">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div>
+              <div data-aos="fade-up">
                 <input
                   type="text"
                   placeholder="Name"
@@ -86,7 +83,7 @@ const ContactForm = () => {
                 )}
               </div>
 
-              <div>
+              <div data-aos="fade-up">
                 <input
                   type="email"
                   placeholder="Email"
@@ -106,7 +103,7 @@ const ContactForm = () => {
                 )}
               </div>
 
-              <div>
+              <div data-aos="fade-up">
                 <input
                   type="text"
                   placeholder="Enter Subject"
@@ -122,7 +119,7 @@ const ContactForm = () => {
                 )}
               </div>
 
-              <div>
+              <div data-aos="fade-up">
                 <textarea
                   placeholder="Message..."
                   rows="4"
@@ -136,7 +133,7 @@ const ContactForm = () => {
                 )}
               </div>
 
-              <div className="flex items-center space-x-2">
+              <div data-aos="fade-up" className="flex items-center space-x-2">
                 <input
                   type="checkbox"
                   {...register("terms", {
@@ -152,7 +149,7 @@ const ContactForm = () => {
                 <p className="text-red-500 text-sm">{errors.terms.message}</p>
               )}
 
-              <button type="submit" className="primary-btn">
+              <button data-aos="fade-up" type="submit" className="primary-btn">
                 Submit Now
               </button>
             </form>

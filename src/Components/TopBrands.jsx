@@ -9,13 +9,17 @@ const TopBrands = () => {
   return (
     <section className="bg-black text-white py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center flex items-center justify-center mb-12">
+        <h2
+          data-aos="fade-up"
+          className="text-4xl font-bold text-center flex items-center justify-center mb-12"
+        >
           Our Top Brands
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {brand.map((img, index) => (
             <div
+              data-aos="fade-up"
               key={index}
               className="border border-primary rounded-lg p-8 flex items-center justify-center hover:border-orange-500 transition-colors"
             >

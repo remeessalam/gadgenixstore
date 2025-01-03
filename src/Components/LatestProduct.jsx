@@ -6,7 +6,10 @@ const LatestProduct = () => {
     <div className="min-h-screen bg-black text-white spacebetween">
       {/* Header */}
       <header className="p-4 border-b border-gray-800">
-        <div className="container mx-auto flex justify-between items-center">
+        <div
+          data-aos="fade-up"
+          className="container mx-auto flex justify-between items-center"
+        >
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
             Latest Arrival Products
@@ -25,6 +28,7 @@ const LatestProduct = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {latestProducts.map((product) => (
             <div
+              data-aos="fade-up"
               key={product.id}
               className="bg-[#111] rounded-lg overflow-hidden"
             >
