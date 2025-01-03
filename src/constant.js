@@ -22,6 +22,15 @@ import categroriesbg from "./assets/images/categoryIcons/categroriesbg.jpeg";
 import categroygadgetimg1 from "./assets/images/categoryIcons/categroygadgetimg1.jpeg";
 import categroygadgetimg2 from "./assets/images/categoryIcons/categroygadgetimg2.jpeg";
 import categroygadgetimg3 from "./assets/images/categoryIcons/categroygadgetimg3.jpeg";
+//home products
+import homeproduct1 from "./assets/images/homeproducts/homeproduct1.png";
+import homeproduct2 from "./assets/images/homeproducts/homeproduct2.png";
+import homeproduct3 from "./assets/images/homeproducts/homeproduct3.png";
+import homeproduct4 from "./assets/images/homeproducts/homeproduct4.png";
+import homeproduct5 from "./assets/images/homeproducts/homeproduct5.jpeg";
+import homeproduct6 from "./assets/images/homeproducts/homeproduct6.jpeg";
+import homeproduct7 from "./assets/images/homeproducts/homeproduct7.jpeg";
+import homeproduct8 from "./assets/images/homeproducts/homeproduct8.jpeg";
 // other images
 import cantactusimage from "./assets/images/cantactusimage.jpeg";
 import contactusicons from "./assets/images/contactusicons.png";
@@ -71,7 +80,7 @@ export const latestProducts = [
     name: "Retractable Car Charger For Andriod / Iphone",
     originalPrice: 74.5,
     discountedPrice: 49.5,
-    image: "/placeholder.svg?height=300&width=300",
+    image: homeproduct1,
     rating: 5,
   },
   {
@@ -79,7 +88,7 @@ export const latestProducts = [
     name: "Portable Blender-500 Watts (3 Jars, Silver)",
     originalPrice: 74.5,
     discountedPrice: 49.5,
-    image: "/placeholder.svg?height=300&width=300",
+    image: homeproduct2,
     rating: 5,
   },
   {
@@ -87,7 +96,7 @@ export const latestProducts = [
     name: "Bike GPS Tracking Device For Car,Bikes",
     originalPrice: 74.5,
     discountedPrice: 49.5,
-    image: "/placeholder.svg?height=300&width=300",
+    image: homeproduct3,
     rating: 5,
   },
   {
@@ -95,7 +104,7 @@ export const latestProducts = [
     name: "3-In-1 Magenetic Charger",
     originalPrice: 74.5,
     discountedPrice: 49.5,
-    image: "/placeholder.svg?height=300&width=300",
+    image: homeproduct4,
     rating: 5,
   },
   {
@@ -103,7 +112,7 @@ export const latestProducts = [
     name: "Magnetic Wireless Charge",
     originalPrice: 74.5,
     discountedPrice: 49.5,
-    image: "/placeholder.svg?height=300&width=300",
+    image: homeproduct5,
     rating: 5,
   },
   {
@@ -111,7 +120,7 @@ export const latestProducts = [
     name: "Multi-Functional Electric Scalp Massager",
     originalPrice: 74.5,
     discountedPrice: 49.5,
-    image: "/placeholder.svg?height=300&width=300",
+    image: homeproduct6,
     rating: 5,
   },
 ];
@@ -161,56 +170,56 @@ export const homeproducts = [
   {
     id: 1,
     title: "Retractable Car Charger For Android / Iphone",
-    image: "/placeholder.svg?height=400&width=400",
+    image: homeproduct1,
     originalPrice: 74.5,
     salePrice: 49.5,
   },
   {
     id: 2,
     title: "Portable Blender-500 Watts (3 Jars, Silver)",
-    image: "/placeholder.svg?height=400&width=400",
+    image: homeproduct2,
     originalPrice: 74.5,
     salePrice: 49.5,
   },
   {
     id: 3,
     title: "Bike GPS Tracking Device For Car,Bikes",
-    image: "/placeholder.svg?height=400&width=400",
+    image: homeproduct3,
     originalPrice: 74.5,
     salePrice: 49.5,
   },
   {
     id: 4,
     title: "Multi-Functional Electric Scalp Massager",
-    image: "/placeholder.svg?height=400&width=400",
+    image: homeproduct4,
     originalPrice: 74.5,
     salePrice: 49.5,
   },
   {
     id: 5,
     title: "3-In-1 Magenetic Charger",
-    image: "/placeholder.svg?height=400&width=400",
+    image: homeproduct5,
     originalPrice: 74.5,
     salePrice: 49.5,
   },
   {
     id: 6,
     title: "Magnetic Wireless Charge",
-    image: "/placeholder.svg?height=400&width=400",
+    image: homeproduct6,
     originalPrice: 74.5,
     salePrice: 49.5,
   },
   {
     id: 7,
     title: "Charger Docker",
-    image: "/placeholder.svg?height=400&width=400",
+    image: homeproduct7,
     originalPrice: 74.5,
     salePrice: 49.5,
   },
   {
     id: 8,
     title: "Magnetic Charger For Iphone",
-    image: "/placeholder.svg?height=400&width=400",
+    image: homeproduct8,
     originalPrice: 74.5,
     salePrice: 49.5,
   },

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import homeproduct1 from "../assets/images/homeproducts/homeproduct1.png";
 const SpecialOffers = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: -372,
@@ -14,7 +14,7 @@ const SpecialOffers = () => {
       name: "Magnetic Alignments",
       originalPrice: 74.5,
       salePrice: 49.5,
-      image: "/placeholder.svg?height=200&width=200",
+      image: homeproduct1,
       rating: 5,
     },
     {
@@ -22,7 +22,7 @@ const SpecialOffers = () => {
       name: "Wireless Chargers",
       originalPrice: 74.5,
       salePrice: 49.5,
-      image: "/placeholder.svg?height=200&width=200",
+      image: homeproduct1,
       rating: 5,
     },
   ];

@@ -35,7 +35,7 @@ const LatestProduct = () => {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-4">
+              <div className="p-4 min-h-[200px] flex flex-col justify-between">
                 <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-gray-400 line-through">

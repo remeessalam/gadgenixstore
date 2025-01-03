@@ -1,40 +1,40 @@
 import { useState } from "react";
-
+import homeproduct2 from "../assets/images/homeproducts/homeproduct2.png";
 const products = [
   {
     id: 1,
     name: "Magnetic Charger",
     price: 12.99,
     quantity: 2,
-    image: "/placeholder.svg",
+    image: homeproduct2,
   },
   {
     id: 2,
     name: "Wireless Charging",
     price: 50.0,
     quantity: 1,
-    image: "/placeholder.svg",
+    image: homeproduct2,
   },
   {
     id: 3,
     name: "Charging Dock",
     price: 45.99,
     quantity: 1,
-    image: "/placeholder.svg",
+    image: homeproduct2,
   },
   {
     id: 4,
     name: "Charging Mat",
     price: 99.99,
     quantity: 2,
-    image: "/placeholder.svg",
+    image: homeproduct2,
   },
   {
     id: 5,
     name: "Wireless Charger",
     price: 25.98,
     quantity: 1,
-    image: "/placeholder.svg",
+    image: homeproduct2,
   },
 ];
 
