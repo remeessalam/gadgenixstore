@@ -71,7 +71,7 @@ const HomeBanner = () => {
             </div>
             <p
               data-aos="fade-up"
-              className="text-lg md:text-xl mb-8 text-gray-300"
+              className="text-lg md:text-xl mb-8 text-white textwithshadow"
             >
               Embrace innovation and elevate your lifestyle with cutting-edge
               gadgets designed to simplify your world. Discover smarter,

@@ -45,23 +45,25 @@ const ContactForm = () => {
               />
               <div data-aos="fade-up" className="flex items-start space-x-4">
                 <div className="mt-1">
-                  <IoLocationSharp className="text-white" />
+                  <IoLocationSharp className="text-white textwithshadow" />
                 </div>
-                <p className="text-gray-300">
+                <p className="text-white textwithshadow">
                   No 1,Raja Kidangu Street Thimiri, Vellore 632 512
                 </p>
               </div>
 
               <div data-aos="fade-up" className="flex items-center space-x-4">
-                <BiSolidPhoneCall className="text-white" />
+                <BiSolidPhoneCall className="text-white textwithshadow" />
 
-                <p className="text-gray-300">+91 - 7010916928</p>
+                <p className="text-white textwithshadow">+91 - 7010916928</p>
               </div>
 
               <div data-aos="fade-up" className="flex items-center space-x-4">
-                <IoMail className="text-white" />
+                <IoMail className="text-white textwithshadow" />
 
-                <p className="text-gray-300">Mail-Gadgetsstore@gmail.Com</p>
+                <p className="text-white textwithshadow">
+                  Mail-Gadgetsstore@gmail.Com
+                </p>
               </div>
             </div>
           </div>

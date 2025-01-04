@@ -20,12 +20,16 @@ const Header = () => {
       <div className="flex items-center justify-between">
         <div className="w-full grid md:grid-cols-6 items-center gap-2">
           <div className="md:col-span-2  flex items-center gap-3">
-            <div className="h-16 w-16 sm:h-20 sm:w-20 bg-primary rounded-full  overflow-hidden">
-              <img src={logo} alt="logo" className="scale-150 " />
-            </div>
-            <h4 className="text-lg font-semibold  text-white">
-              Gadgenix Store
-            </h4>
+            <Link to={"/"}>
+              <div className="h-16 w-16 sm:h-20 sm:w-20 bg-primary rounded-full  overflow-hidden">
+                <img src={logo} alt="logo" className="scale-150 " />
+              </div>
+            </Link>
+            <Link to={"/"}>
+              <h4 className="text-lg font-semibold  text-white">
+                Gadgenix Store
+              </h4>
+            </Link>
           </div>
           {/* DESKTOP NAVIGATION */}
           <nav className="hidden md:flex items-center gap-8 md:col-span-4 ml-[6rem]">

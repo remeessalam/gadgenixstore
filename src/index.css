@@ -37,3 +37,7 @@ body {
 .animate-slide {
   animation: slide 15s linear infinite;
 }
+
+.textwithshadow {
+  text-shadow: 2px 2px 8px black;
+}
