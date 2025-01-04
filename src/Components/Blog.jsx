@@ -21,11 +21,15 @@ const Blog = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogs.map((blog) => (
-            <div data-aos="fade-up" key={blog.id} className="relative group">
+            <div
+              data-aos="fade-up"
+              key={blog.id}
+              className="relative group max-h-[350px]"
+            >
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="w-full h-64 object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
                 <span className="inline-block px-3 py-1 bg-white text-black rounded-full text-sm mb-2">
