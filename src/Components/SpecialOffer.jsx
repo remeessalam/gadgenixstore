@@ -28,7 +28,7 @@ const SpecialOffers = () => {
   ];
 
   return (
-    <div className="w-full mx-auto sm:mx-0 max-w-[300px] bg-headerbgcolor text-white p-4 h-fit">
+    <div className="w-full  bg-headerbgcolor text-white p-4 h-fit rounded-lg">
       {/* Special Offer Header */}
       <h2
         data-aos="fade-right"

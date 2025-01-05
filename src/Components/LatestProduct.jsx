@@ -13,7 +13,7 @@ const LatestProduct = () => {
       <header className="p-4 border-b border-gray-800">
         <div
           data-aos="fade-up"
-          className="container mx-auto flex justify-between items-center"
+          className="wrapper flex justify-between items-center"
         >
           <h1 className="text-2xl font-bold flex items-center gap-2">
             <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
@@ -28,7 +28,7 @@ const LatestProduct = () => {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto p-4 flex flex-col sm:flex-row gap-4">
+      <main className="wrapper flex flex-col sm:flex-row gap-4 pt-4">
         <SpecialOffers />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {latestProducts.map((product) => (
