@@ -53,7 +53,7 @@ const CartItems = () => {
                     <span className="font-medium">{item.name}</span>
                   </div>
                   <div className="col-span-2 text-right">
-                    <h1 className="sm:hidden flex">Price</h1>$
+                    <h1 className="sm:hidden flex">Price</h1>₹
                     {item.price.toFixed(2)}
                   </div>
                   <h1 className="sm:hidden flex">Quantity</h1>
@@ -69,7 +69,7 @@ const CartItems = () => {
                     />
                   </div>
                   <div className="col-span-1 text-right">
-                    <h1 className="sm:hidden flex">Total</h1>$
+                    <h1 className="sm:hidden flex">Total</h1>₹
                     {(item.price * item.quantity).toFixed(2)}
                   </div>
                   <div className="col-span-1 flex justify-end items-start">
@@ -91,7 +91,7 @@ const CartItems = () => {
               <div className="text-right">
                 <span className="uppercase font-medium">Cart Total = </span>
                 <span className="text-xl font-bold">
-                  ${calculateTotal().toFixed(2)}
+                  ₹{calculateTotal().toFixed(2)}
                 </span>
               </div>
             </div>

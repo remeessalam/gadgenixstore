@@ -179,23 +179,23 @@ const CheckoutForm = () => {
               <div data-aos="fade-up" className="space-y-2">
                 <div className="flex justify-between text-gray-300">
                   <span>Charging Dock</span>
-                  <span>$15.00</span>
+                  <span>₹15.00</span>
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>All-in-One Charger</span>
-                  <span>$15.00</span>
+                  <span>₹15.00</span>
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Charging Station</span>
-                  <span>$15.00</span>
+                  <span>₹15.00</span>
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Magnetic Charger</span>
-                  <span>$15.00</span>
+                  <span>₹15.00</span>
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Wireless Charger</span>
-                  <span>$15.00</span>
+                  <span>₹15.00</span>
                 </div>
               </div>
 
@@ -204,7 +204,7 @@ const CheckoutForm = () => {
                 className="flex justify-between border-t border-gray-700 pt-2"
               >
                 <span className="font-medium text-white">Subtotal</span>
-                <span className="font-medium text-white">$75.00</span>
+                <span className="font-medium text-white">₹75.00</span>
               </div>
 
               <div data-aos="fade-up" className="rounded bg-[#222] p-4">
