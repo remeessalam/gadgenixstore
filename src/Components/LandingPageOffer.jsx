@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import landingpagebanner from "../assets/images/landingpagebanner.jpeg";
 import landingpageimage from "../assets/images/landingpageimage.jpeg";
 import landingpageaboutimg from "../assets/images/landingpageaboutimg.jpeg";
+import { products } from "../constant";
+import { Link } from "react-router-dom";
 const LandingPageOffer = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: "00",
@@ -65,7 +67,7 @@ const LandingPageOffer = () => {
       <div className="wrapper grid md:grid-cols-2 spacebetween text-white gap-8">
         <div data-aos="fade-right">
           <img
-            src={landingpageimage}
+            src={products[4].images[2]}
             alt="Wireless charger on wooden surface"
             className="w-full rounded-lg object-cover max-h-[500px]"
           />
@@ -74,16 +76,18 @@ const LandingPageOffer = () => {
           data-aos="fade-left"
           className="space-y-4 flex flex-col justify-center items-center"
         >
-          <h1 className="text-4xl font-bold">Mac Safe Wireless Charger</h1>
+          <h1 className="text-4xl font-bold text-center">{products[4].name}</h1>
           <div className="text-primary">LIMITED OFFER 25% OFF!</div>
-          <p className="text-gray-400">
-            Macsafe Wireless Charger For Iphone 13, 14,14pro,14pro Max,15 and
-            15series
-          </p>
-          <button className="flex items-center text-white hover:text-primary transition-colors">
+          <p className="text-gray-400">{products[4].description}</p>
+          <Link
+            to={
+              "/product/3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger"
+            }
+            className="flex items-center text-white hover:text-primary transition-colors"
+          >
             <span className="mr-2">Discover More</span>
             <span>+</span>
-          </button>
+          </Link>
         </div>
       </div>
       <div

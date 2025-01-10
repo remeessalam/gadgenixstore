@@ -1,5 +1,5 @@
 import { FaStar } from "react-icons/fa";
-import { homeproducts } from "../constant";
+import { homeproducts, products } from "../constant";
 import { useNavigate } from "react-router-dom";
 
 const HomeProduct = () => {
@@ -39,7 +39,7 @@ const HomeProduct = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {homeproducts.map((product) => (
+          {products.map((product) => (
             <div
               data-aos="fade-up"
               key={product.id}
@@ -48,20 +48,20 @@ const HomeProduct = () => {
             >
               <div className="relative aspect-square mb-4">
                 <img
-                  src={product.image}
+                  src={product.images[0]}
                   alt={product.title}
                   className="w-full h-full object-cover rounded-lg"
                 />
               </div>
               <h3 className="text-white text-lg font-medium mb-2">
-                {product.title}
+                {product.name}
               </h3>
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-gray-500 line-through">
+                {/* <span className="text-gray-500 line-through">
                   ${product.originalPrice.toFixed(2)}
-                </span>
+                </span> */}
                 <span className="text-orange-500">
-                  ${product.salePrice.toFixed(2)}
+                  ₹{product.price.toFixed(2)}
                 </span>
               </div>
               <div className="flex gap-1 mb-4">
@@ -73,7 +73,7 @@ const HomeProduct = () => {
                 ))}
               </div>
               <button className="mt-auto bg-transparent border border-orange-500 text-orange-500 py-2 px-4 rounded-lg hover:bg-orange-500 hover:text-white transition-colors flex items-center justify-center gap-2">
-                Add To Cart
+                View Product
               </button>
             </div>
           ))}

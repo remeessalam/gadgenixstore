@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import carousalimage1 from "../assets/images/carousalimage1.jpeg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { products } from "../constant";
 const ProductCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState({
@@ -10,8 +11,7 @@ const ProductCarousel = () => {
     seconds: 26,
   });
 
-  const images = [carousalimage1, carousalimage1, carousalimage1];
-
+  const images = products[4].images;
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -64,15 +64,12 @@ const ProductCarousel = () => {
           </div>
 
           <div data-aos="fade-up" className="mb-4">
-            <span className="text-gray-500 line-through mr-2">$99.00</span>
-            <span className="text-2xl font-bold">$49.00</span>
+            {/* <span className="text-gray-500 line-through mr-2">$99.00</span> */}
+            <span className="text-2xl font-bold">₹{products[4]?.price}</span>
           </div>
 
           <p data-aos="fade-up" className="text-gray-300 mb-6 max-w-2xl">
-            Stay Ahead Of The Tech Curve With Our Latest Arrivals. At
-            Gadgenix.Store, We&apos;re Always Adding Innovative Gadgets To Our
-            Collection To Keep You Updated With The Newest Trends In Smart
-            Living.
+            {products[4].description}
           </p>
 
           <div className="mb-8">

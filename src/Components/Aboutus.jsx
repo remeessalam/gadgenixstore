@@ -3,6 +3,7 @@ import { BiPlay } from "react-icons/bi";
 import ReactPlayer from "react-player";
 import aboutvideo from "../assets/video/aboutusvideo.mp4";
 import teamVidThumb from "../assets/images/videothumb.png";
+import { Link } from "react-router-dom";
 const Aboutus = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
@@ -61,9 +62,9 @@ const Aboutus = () => {
             technology into your lifestyle, empowering you to achieve more with
             ease and efficiency.
           </p>
-          <button data-aos="fade-left" className="primary-btn">
+          <Link to={"/contact-us"} data-aos="fade-left" className="primary-btn">
             More About us
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import HomeProduct from "../Components/HomeProduct";
 import ProductCarousel from "../Components/ProductCarousel";
 import ProductCategories from "../Components/ProductCategories";
 import SlidingText from "../Components/SlidingText";
+import Testimonials from "../Components/Testimonials";
 import TopBrands from "../Components/TopBrands";
 
 const HomePage = () => {
@@ -13,11 +14,13 @@ const HomePage = () => {
       <HomeBanner />
       <ProductCategories />
       <HomeProduct />
-      <FavouriteProduct />
+      {/* <FavouriteProduct /> */}
       <ProductCarousel />
       <SlidingText />
       <OfferZone />
-      <TopBrands />
+      <Testimonials />
+
+      {/* <TopBrands /> */}
     </div>
   );
 };

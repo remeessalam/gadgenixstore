@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { latestProducts } from "../constant";
+import { latestProducts, otherProducts, products } from "../constant";
 import SpecialOffers from "./SpecialOffer";
 
 const LatestProduct = () => {
   const navigate = useNavigate();
-  const redirect = () => {
-    navigate("/product/123456789");
+  const redirect = (productname) => {
+    navigate(`/product/${productname}`);
   };
+  console.log(products, "sdfasdfds");
   return (
     <div className="min-h-screen bg-black text-white spacebetween">
       {/* Header */}
@@ -31,28 +32,28 @@ const LatestProduct = () => {
       <main className="wrapper flex flex-col sm:flex-row gap-4 pt-4">
         <SpecialOffers />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {latestProducts.map((product) => (
+          {products.map((product) => (
             <div
-              onClick={redirect}
+              onClick={() => redirect(product?.pathname)}
               data-aos="fade-up"
               key={product.id}
               className="bg-[#111] rounded-lg overflow-hidden cursor-pointer"
             >
               <div className="aspect-square overflow-hidden">
                 <img
-                  src={product.image}
-                  alt={product.name}
+                  src={product?.images[0]}
+                  alt={product?.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-4 min-h-[200px] flex flex-col justify-between">
-                <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+              <div className="p-4 min-h-[256px] flex flex-col justify-between">
+                <h3 className="text-lg font-semibold mb-2">{product?.name}</h3>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-gray-400 line-through">
-                    ${product.originalPrice.toFixed(2)}
+                    {/* ${product.originalPrice.toFixed(2)} */}
                   </span>
                   <span className="text-orange-500 font-bold">
-                    ${product.discountedPrice.toFixed(2)}
+                    ₹{product?.price?.toFixed(2)}
                   </span>
                 </div>
                 <div className="flex items-center gap-1 mb-4">
@@ -78,7 +79,8 @@ const LatestProduct = () => {
                   >
                     <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                  Add To Cart
+                  {/* Add To Cart */}
+                  View Product
                 </button>
               </div>
             </div>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { GiFlame } from "react-icons/gi";
-import { banner1, banner2, banner3, banner4 } from "../constant";
-
-const backgroundImages = [banner1, banner2, banner3, banner4];
+import { banner1, banner2, banner3 } from "../constant";
+import { Link } from "react-router-dom";
+// banner4
+const backgroundImages = [banner1, banner2, banner3];
 
 const HomeBanner = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -34,7 +35,7 @@ const HomeBanner = () => {
           style={{
             backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
             backgroundSize: "cover",
-            backgroundPosition: "top",
+            backgroundPosition: "center",
           }}
         >
           <div className="absolute inset-0 bg-black/50" />
@@ -45,7 +46,7 @@ const HomeBanner = () => {
           <div data-aos="fade-up" className="flex space-x-2 text-white">
             <GiFlame className="w-6 h-6" />
             <span className="font-semibold mt-1">
-              GET <span className="text-primarytextcolor">25% OFF</span> NOW
+              GET <span className="text-primarytextcolor">25% OFF </span> NOW
             </span>
           </div>
 
@@ -55,19 +56,28 @@ const HomeBanner = () => {
               className="text-4xl md:text-6xl font-bold mb-4"
             >
               Discover The Future Of
-              <span className="text-primary">Smart Living.</span>
+              <span className="text-primary"> Smart Living.</span>
             </h1>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <button data-aos="fade-up" className="primary-btn">
+              <Link
+                to={
+                  "/product/3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger"
+                }
+                data-aos="fade-up"
+                className="primary-btn"
+              >
                 Shop Now
-              </button>
-              <button
+              </Link>
+              <Link
+                to={
+                  "/product/3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger"
+                }
                 data-aos="fade-up"
                 className="border border-white hover:bg-white/10 text-white px-8 py-3 rounded-full transition-colors"
               >
                 View Details
-              </button>
+              </Link>
             </div>
             <p
               data-aos="fade-up"
@@ -93,7 +103,7 @@ const HomeBanner = () => {
                 data-aos="fade-up"
                 className="text-4xl mt-4 mb-4 sm:mb-0 font-bold text-orange-500"
               >
-                $99.00
+                ₹1999.00
               </div>
             </div>
           </div>

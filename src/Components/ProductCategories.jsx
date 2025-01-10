@@ -7,6 +7,7 @@ import {
   categroygadgetimg3,
   textdeco,
 } from "../constant";
+import { Link } from "react-router-dom";
 
 const ProductCategories = () => {
   return (
@@ -27,7 +28,8 @@ const ProductCategories = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {categories.map((category, index) => (
-            <div
+            <Link
+              to={category.link && category.link}
               data-aos="fade-up"
               key={index}
               className="flex flex-col items-center group cursor-pointer"
@@ -43,7 +45,7 @@ const ProductCategories = () => {
               <span className="text-center text-sm font-medium group-hover:text-orange-500 transition-colors">
                 {category.name}
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

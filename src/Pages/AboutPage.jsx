@@ -12,9 +12,9 @@ const AboutPage = () => {
       <PageBanner image={aboutbanneriamge} title="About Us" style="bg-center" />
       <Aboutus />
       <OurWork />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Blog />
-      <TopBrands />
+      {/* <TopBrands /> */}
     </div>
   );
 };

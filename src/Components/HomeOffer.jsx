@@ -1,32 +1,34 @@
+import { Link } from "react-router-dom";
 import product1 from "../assets/images/homeproducts/homeproduct1.png";
+import { banner2 } from "../constant";
 function OfferZone() {
   const products = [
-    {
-      title: "All-In-One Charger",
-      description: "Best All-In-One Charger In The Market",
-      image: product1,
-      discount: "50% OFF",
-      buttonText: "Shop Now",
-    },
-    {
-      title: "Wireless Charger",
-      description: "Best Wireless Chargers From Our Huge Collection",
-      image: product1,
-      discount: "50% OFF",
-      buttonText: "Shop Now",
-    },
-    {
-      title: "Charging Dock",
-      description: "Best Charging Dock From Our Huge Collection",
-      image: product1,
-      discount: "50% OFF",
-      buttonText: "Shop Now",
-    },
+    // {
+    //   title: "All-In-One Charger",
+    //   description: "Best All-In-One Charger In The Market",
+    //   image: product1,
+    //   discount: "50% OFF",
+    //   buttonText: "Shop Now",
+    // },
+    // {
+    //   title: "Wireless Charger",
+    //   description: "Best Wireless Chargers From Our Huge Collection",
+    //   image: product1,
+    //   discount: "50% OFF",
+    //   buttonText: "Shop Now",
+    // },
+    // {
+    //   title: "Charging Dock",
+    //   description: "Best Charging Dock From Our Huge Collection",
+    //   image: product1,
+    //   discount: "50% OFF",
+    //   buttonText: "Shop Now",
+    // },
     {
       title: "Charging Station",
       description: "Best Charging Station From Our Huge Collection",
-      image: product1,
-      discount: "50% OFF",
+      image: banner2,
+      discount: "40% OFF",
       buttonText: "Shop Now",
     },
   ];
@@ -62,9 +64,14 @@ function OfferZone() {
                   {product.title}
                 </h2>
                 <p className="text-white text-sm mb-4">{product.description}</p>
-                <button className="bg-white text-black px-6 py-2 rounded-full text-sm hover:bg-gray-100 transition-colors">
+                <Link
+                  to={
+                    "/product/3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger"
+                  }
+                  className="bg-white text-black px-6 py-2 rounded-full text-sm hover:bg-gray-100 transition-colors"
+                >
                   {product.buttonText}
-                </button>
+                </Link>
               </div>
             </div>
           </div>
