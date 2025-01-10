@@ -107,7 +107,7 @@ const ProductItem = () => {
                   className="w-full rounded-lg"
                 />
               </div>
-              <div className="flex gap-4 ">
+              <div className="flex flex-wrap gap-4 ">
                 {product.images?.map((image, index) => (
                   <img
                     onClick={() => setSelectedImage(image)}
@@ -344,7 +344,7 @@ const ProductItem = () => {
               )}
             </button>
           </div>
-          <div className="flex gap-4 overflow-x-auto pb-2 pt-2 px-3 mt-3">
+          <div className="flex flex-wrap gap-4 overflow-x-auto pb-2 pt-2 px-3 mt-3">
             {product?.videos?.map((video, index) => (
               <div
                 key={index}
