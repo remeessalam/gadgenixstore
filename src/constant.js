@@ -38,6 +38,10 @@ import homeproduct55 from "./assets/images/homeproducts/homeproduct55.mp4";
 import homeproduct56 from "./assets/images/homeproducts/homeproduct56.mp4";
 import homeproduct57 from "./assets/images/homeproducts/homeproduct57.mp4";
 import homeproduct58 from "./assets/images/homeproducts/homeproduct58.jpeg";
+import homeproduct59 from "./assets/images/homeproducts/homeproduct59.png";
+import homeproduct60 from "./assets/images/homeproducts/homeproduct60.png";
+import homeproduct61 from "./assets/images/homeproducts/homeproduct61.png";
+import homeproduct62 from "./assets/images/homeproducts/homeproduct62.png";
 import homeproduct7 from "./assets/images/homeproducts/homeproduct7.jpeg";
 import homeproduct8 from "./assets/images/homeproducts/homeproduct8.jpeg";
 // other images
@@ -474,6 +478,11 @@ export const products = [
       // homeproduct51,
       homeproduct52,
       homeproduct53,
+      homeproduct58,
+      homeproduct59,
+      homeproduct60,
+      homeproduct61,
+      homeproduct62,
     ],
     videos: [homeproduct54, homeproduct55, homeproduct56, homeproduct57],
     rating: 5,

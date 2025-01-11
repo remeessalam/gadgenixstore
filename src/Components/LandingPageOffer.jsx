@@ -82,9 +82,9 @@ const LandingPageOffer = () => {
           data-aos="fade-left"
           className="space-y-4 flex flex-col justify-center items-center"
         >
-          <h1 className="text-4xl font-bold text-center">{products[4].name}</h1>
+          <h1 className="text-4xl font-bold text-center">{products[0].name}</h1>
           <div className="text-primary">LIMITED OFFER 25% OFF!</div>
-          <p className="text-gray-400">{products[4].description}</p>
+          <p className="text-gray-400">{products[0].description}</p>
           <Link
             to={
               "/product/3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger"

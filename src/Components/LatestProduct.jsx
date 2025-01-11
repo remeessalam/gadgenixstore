@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { latestProducts, otherProducts, products } from "../constant";
+import { products } from "../constant";
 import SpecialOffers from "./SpecialOffer";
 
 const LatestProduct = () => {

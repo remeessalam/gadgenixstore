@@ -17,6 +17,7 @@ const ProductItem = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const playerRef = useRef(null);
   const [showThumbnail, setShowThumbnail] = useState(true);
+  const [color, setColor] = useState("white");
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
 
@@ -85,13 +86,18 @@ const ProductItem = () => {
         id: product.id,
         name: product.name,
         price: product.price,
-        image: product.images[0],
+        image: selectedImage,
         quantity: quantity,
       })
     );
   };
   const isInCart = cartItems.some((item) => item.id === product.id);
-
+  const chooseProductColor = (color) => {
+    setColor(color);
+    color === "white"
+      ? setSelectedImage(product.images[0])
+      : setSelectedImage(product.images[5]);
+  };
   return (
     <div>
       <div className="bg-black text-white pt-[96px] sm:pt-[112px]">
@@ -104,7 +110,7 @@ const ProductItem = () => {
                   data-aos="fade-up"
                   src={selectedImage}
                   alt={product.name}
-                  className="w-full rounded-lg"
+                  className="w-full rounded-lg max-h-[65vh]"
                 />
               </div>
               <div className="flex flex-wrap gap-4 ">
@@ -154,7 +160,26 @@ const ProductItem = () => {
             >
               {product?.stock ? "Ready To Ship " : "Not In Stock"}
             </h1>
-
+            {product.id === 1 && (
+              <div className="flex gap-2">
+                <h1
+                  onClick={() => chooseProductColor("white")}
+                  className={`py-2 px-3 rounded-2xl border w-fit ${
+                    color === "white" ? `bg-white text-black` : `bg-`
+                  }`}
+                >
+                  white
+                </h1>
+                <h1
+                  onClick={() => chooseProductColor("black")}
+                  className={`py-2 px-3 rounded-2xl border w-fit ${
+                    color === "black" ? `bg-white text-black` : `bg-`
+                  }`}
+                >
+                  black
+                </h1>
+              </div>
+            )}
             <div className="flex items-center gap-4">
               <div
                 data-aos="fade-up"
