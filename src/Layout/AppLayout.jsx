@@ -10,9 +10,9 @@ const AppLayout = () => {
     offset: -50,
   });
   return (
-    <div>
+    <div className="max-w-screen overflow-hidden">
       <Header />
-      <div className="w-screen overflow-hidden">
+      <div className="max-w-screen overflow-hidden">
         <Outlet />
       </div>
       <Footer />

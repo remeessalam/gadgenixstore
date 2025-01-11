@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 const HomeProduct = () => {
   const navigate = useNavigate();
-  const redirect = () => {
-    navigate("/product/123456789");
+  const redirect = (pathname) => {
+    navigate(`/product/${pathname}`);
   };
   return (
     <div className="min-h-screen bg-black">
@@ -44,7 +44,7 @@ const HomeProduct = () => {
               data-aos="fade-up"
               key={product.id}
               className="bg-black rounded-lg p-4 flex flex-col cursor-pointer"
-              onClick={redirect}
+              onClick={() => redirect(product?.pathname)}
             >
               <div className="relative aspect-square mb-4">
                 <img

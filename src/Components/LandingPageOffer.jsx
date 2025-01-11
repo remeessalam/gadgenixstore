@@ -31,10 +31,10 @@ const LandingPageOffer = () => {
               New in Store
             </span>
           </div>
-          <h2 data-aos="fade-up" className="text-4xl font-bold">
+          <h2 data-aos="fade-up" className="text-4xl font-bold text-black">
             Deal of the Day
           </h2>
-          <div className="flex gap-4">
+          <div className="flex gap-4 text-primary">
             <div data-aos="fade-up" className="text-center">
               <div className="text-xl">{timeLeft.days}</div>
               <div className="text-sm text-[#FF6B6B]">Days</div>
@@ -52,9 +52,15 @@ const LandingPageOffer = () => {
               <div className="text-sm text-[#FF6B6B]">Secs</div>
             </div>
           </div>
-          <button data-aos="fade-up" className="primary-btn">
+          <Link
+            to={
+              "/product/3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger"
+            }
+            data-aos="fade-up"
+            className="primary-btn"
+          >
             Buy Now →
-          </button>
+          </Link>
         </div>
         <div data-aos="fade-up" className="">
           <img
@@ -67,7 +73,7 @@ const LandingPageOffer = () => {
       <div className="wrapper grid md:grid-cols-2 spacebetween text-white gap-8">
         <div data-aos="fade-right">
           <img
-            src={products[4].images[2]}
+            src={products[0].images[2]}
             alt="Wireless charger on wooden surface"
             className="w-full rounded-lg object-cover max-h-[500px]"
           />

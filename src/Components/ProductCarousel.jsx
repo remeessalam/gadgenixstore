@@ -11,7 +11,7 @@ const ProductCarousel = () => {
     seconds: 26,
   });
 
-  const images = products[4].images;
+  const images = products[0].images;
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {

@@ -259,102 +259,6 @@ export const homeproducts = [
 export const otherProducts = [
   {
     id: 1,
-    name: "Retractable Car Charger for Android/iPhone",
-    pathname: "Retractable-Car-Charger-for-Android-iPhone",
-    price: 2500,
-    image: homeproduct1,
-    rating: 5,
-    description:
-      "Stay Powered On the Go! The perfect companion for your road trips, daily commutes, or quick errands. This Retractable Car Charger is designed to keep your devices fully charged without the clutter of tangled cables.",
-    keyFeatures: [
-      "Universal Compatibility: Works seamlessly with Android (USB-C/Micro-USB) and iPhone (Lightning) devices.",
-      "Retractable Design: Adjustable cable length keeps your car neat and organized while preventing cable damage.",
-      "Fast Charging: Delivers high-speed charging to power up your devices quickly and efficiently.",
-      "Dual Charging Options: Features a built-in cable and an additional USB port to charge two devices simultaneously.",
-      "Compact & Durable: Lightweight, portable, and built to withstand daily use with premium materials.",
-      "LED Indicator: Soft LED light shows the charger is active and ready to use, even in low light.",
-    ],
-    callToAction:
-      "Upgrade your car charging experience with this sleek and functional gadget. Perfect for anyone who values convenience and style.",
-    company:
-      "Why Choose Us? At Gadgenix.store, we offer innovative gadgets that make your life easier. Enjoy fast shipping, reliable customer service, and a product you can trust.",
-    order: "Order Now and Never Run Out of Power on the Road!",
-  },
-  {
-    id: 2,
-    name: "Portable Blender- 500 Watts (3 Jars, Silver)",
-    pathname: "Portable-Blender-500-Watts",
-    image: homeproduct2,
-    price: 2400,
-    rating: 5,
-    description:
-      "Blend Anywhere, Anytime! Make fresh smoothies, shakes, and juices on the go with this Portable Blender. Compact, rechargeable, and powerful, it’s the ultimate gadget for every health enthusiast and busy individual.",
-    keyFeatures: [
-      "Powerful Performance: Equipped with a high-speed motor and stainless steel blades to blend fruits, vegetables, and ice effortlessly.",
-      "USB Rechargeable: Long-lasting battery that charges via USB, making it perfect for travel, work, or outdoor adventures.",
-      "Compact & Lightweight: Fits easily in your bag, cup holder, or backpack for ultimate portability.",
-      "One-Touch Operation: Simple to use with a single button for blending and cleaning.",
-      "Safe & Durable: Made from BPA-free, food-grade materials with a safety lock system to prevent spills.",
-      "Easy to Clean: Detachable parts make cleaning quick and hassle-free.",
-    ],
-    perfectFor: ["Smoothies", "Protein Shakes", "Fresh Juices", "Baby Food"],
-    company:
-      "Why Choose Gadgenix.store? We bring you innovative gadgets designed to simplify your life. With fast shipping, reliable quality, and exceptional customer support, your satisfaction is our priority.",
-    order: "Order Now and Enjoy Fresh Blends Anytime, Anywhere!",
-  },
-  {
-    id: 3,
-    name: "Bike GPS Tracking Device for Car, SUV, Scooty, Bus, Truck, JCB etc. & All E-Vehicles with Real time Tracking | Easy Installation",
-    pathname: "Bike-GPS-Tracking-Device-for-Car",
-    price: 1200,
-    rating: 5,
-    image: homeproduct3,
-    description:
-      "Secure Your Ride, Anytime, Anywhere! Track and protect your two-wheeler with this advanced GPS Tracker. Designed for motorcycles, scooters, and other two-wheelers, it ensures real-time location tracking and enhanced security.",
-    keyFeatures: [
-      "Real-Time Tracking: Monitor your vehicle's exact location via a mobile app with live updates.",
-      "Geo-Fencing Alerts: Set safe zones and receive instant notifications if your vehicle leaves the designated area.",
-      "Anti-Theft Alarm: Built-in motion detection triggers alerts for unauthorized movements or tampering.",
-      "Route History Playback: Access past routes and travel history for up to 90 days.",
-      "Compact & Discreet: Small, lightweight design that’s easy to install and hard to detect.",
-      "Battery Backup: Includes a rechargeable backup battery for uninterrupted tracking, even if disconnected.",
-      "App Integration: Compatible with Android and iOS devices for seamless control and monitoring.",
-      "Weatherproof Design: Durable, water-resistant casing ensures reliable performance in all conditions.",
-    ],
-    benefits: [
-      "Protects against theft and unauthorized use.",
-      "Helps monitor fleet vehicles for businesses.",
-      "Ensures peace of mind for long-distance riders.",
-    ],
-    company:
-      "Why Choose Gadgenix.store? At Gadgenix.store, we provide cutting-edge gadgets that keep you connected and secure. Enjoy premium quality, fast delivery, and dedicated customer support.",
-  },
-  {
-    id: 4,
-    name: "Multi-functional Electric Scalp Massager for Therapeutic Deep Tissue Vibrating Health Care",
-    pathname: "Multi-functional-Electric-Scalp-Massager",
-    price: 999,
-    image: homeproduct4,
-    rating: 5,
-    description:
-      "Relax, Rejuvenate, and Recharge! Experience the ultimate in relaxation with the Multi-Functional Electric Scalp Massager. Designed for therapeutic deep tissue care, this innovative device promotes better blood circulation, reduces stress, and relieves tension effortlessly.",
-    keyFeatures: [
-      "Deep Tissue Vibrating Massage: Targets scalp muscles with precision, offering a soothing and revitalizing experience.",
-      "Multi-Functional Design: Perfect for scalp, neck, shoulders, and other areas needing relief.",
-      "Customizable Settings: Choose from multiple vibration modes and intensity levels to suit your needs.",
-      "Ergonomic & Portable: Compact, lightweight design with an easy-grip handle for effortless use anywhere.",
-      "Rechargeable & Wireless: Long-lasting battery with USB charging for convenience.",
-      "Waterproof Build: Safe for use during showers for an enhanced massage experience.",
-      "Premium Materials: Made with skin-friendly, durable materials for a comfortable and safe massage.",
-    ],
-    benefits: [
-      "Reduces stress and tension.",
-      "Improves blood circulation for healthier hair and skin.",
-      "Enhances relaxation and overall well-being.",
-    ],
-  },
-  {
-    id: 5,
     name: "3 in 1 Magnetic Foldable MagSafe Compatible Wireless Charger",
     pathname: "3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger",
     image: homeproduct5,
@@ -456,72 +360,41 @@ export const otherProducts = [
     heatGenerated:
       "Wireless chargers generate mild heat while charging, which is normal. It can sometimes be trapped between the phone and the mobile case, so removing thick cases is recommended.",
   },
-];
 
-export const products = [
-  {
-    id: 1,
-    name: "Retractable Car Charger for Android/iPhone",
-    pathname: "Retractable-Car-Charger-for-Android-iPhone",
-    price: 2500,
-    image: homeproduct1,
-    images: [homeproduct12, homeproduct13],
-
-    rating: 5,
-    stock: false,
-    tagline: "Stay Powered On the Go!",
-    description:
-      "The perfect companion for your road trips, daily commutes, or quick errands. This Retractable Car Charger is designed to keep your devices fully charged without the clutter of tangled cables.",
-    keyFeatures: [
-      "Universal Compatibility: Works seamlessly with Android (USB-C/Micro-USB) and iPhone (Lightning) devices.",
-      "Retractable Design: Adjustable cable length keeps your car neat and organized while preventing cable damage.",
-      "Fast Charging: Delivers high-speed charging to power up your devices quickly and efficiently.",
-      "Dual Charging Options: Features a built-in cable and an additional USB port to charge two devices simultaneously.",
-      "Compact & Durable: Lightweight, portable, and built to withstand daily use with premium materials.",
-      "LED Indicator: Soft LED light shows the charger is active and ready to use, even in low light.",
-    ],
-    cta: "Upgrade your car charging experience with this sleek and functional gadget. Perfect for anyone who values convenience and style.",
-    whyChooseUs:
-      "At Gadgenix.store, we offer innovative gadgets that make your life easier. Enjoy fast shipping, reliable customer service, and a product you can trust.",
-    finalCTA: "Order Now and Never Run Out of Power on the Road!",
-  },
   {
     id: 2,
-    name: "Portable Blender - 500 Watts (3 Jars, Silver)",
-    tagline: "Blend Anywhere, Anytime!",
-    pathname: "Portable-Blender-500-Watts",
-    images: [homeproduct2],
-    price: 2400,
-    stock: false,
-
+    name: "Multi-functional Electric Scalp Massager for Therapeutic Deep Tissue Vibrating Health Care",
+    pathname: "Multi-functional-Electric-Scalp-Massager",
+    price: 999,
+    image: homeproduct4,
     rating: 5,
     description:
-      "Make fresh smoothies, shakes, and juices on the go with this Portable Blender. Compact, rechargeable, and powerful, it’s the ultimate gadget for every health enthusiast and busy individual.",
+      "Relax, Rejuvenate, and Recharge! Experience the ultimate in relaxation with the Multi-Functional Electric Scalp Massager. Designed for therapeutic deep tissue care, this innovative device promotes better blood circulation, reduces stress, and relieves tension effortlessly.",
     keyFeatures: [
-      "Powerful Performance: Equipped with a high-speed motor and stainless steel blades to blend fruits, vegetables, and ice effortlessly.",
-      "USB Rechargeable: Long-lasting battery that charges via USB, making it perfect for travel, work, or outdoor adventures.",
-      "Compact & Lightweight: Fits easily in your bag, cup holder, or backpack for ultimate portability.",
-      "One-Touch Operation: Simple to use with a single button for blending and cleaning.",
-      "Safe & Durable: Made from BPA-free, food-grade materials with a safety lock system to prevent spills.",
-      "Easy to Clean: Detachable parts make cleaning quick and hassle-free.",
+      "Deep Tissue Vibrating Massage: Targets scalp muscles with precision, offering a soothing and revitalizing experience.",
+      "Multi-Functional Design: Perfect for scalp, neck, shoulders, and other areas needing relief.",
+      "Customizable Settings: Choose from multiple vibration modes and intensity levels to suit your needs.",
+      "Ergonomic & Portable: Compact, lightweight design with an easy-grip handle for effortless use anywhere.",
+      "Rechargeable & Wireless: Long-lasting battery with USB charging for convenience.",
+      "Waterproof Build: Safe for use during showers for an enhanced massage experience.",
+      "Premium Materials: Made with skin-friendly, durable materials for a comfortable and safe massage.",
     ],
-    perfectFor: ["Smoothies", "Protein Shakes", "Fresh Juices", "Baby Food"],
-    whyChooseUs:
-      "We bring you innovative gadgets designed to simplify your life. With fast shipping, reliable quality, and exceptional customer support, your satisfaction is our priority.",
-    finalCTA: "Order Now and Enjoy Fresh Blends Anytime, Anywhere!",
+    benefits: [
+      "Reduces stress and tension.",
+      "Improves blood circulation for healthier hair and skin.",
+      "Enhances relaxation and overall well-being.",
+    ],
   },
+
   {
     id: 3,
-    name: "Bike GPS Tracking Device for Car, SUV, Scooty, Bus, Truck, JCB etc. & All E-Vehicles",
-    tagline: "Secure Your Ride, Anytime, Anywhere!",
+    name: "Bike GPS Tracking Device for Car, SUV, Scooty, Bus, Truck, JCB etc. & All E-Vehicles with Real time Tracking | Easy Installation",
     pathname: "Bike-GPS-Tracking-Device-for-Car",
     price: 1200,
     rating: 5,
-    stock: false,
-
-    images: [homeproduct3],
+    image: homeproduct3,
     description:
-      "Track and protect your two-wheeler with this advanced GPS Tracker. Designed for motorcycles, scooters, and other two-wheelers, it ensures real-time location tracking and enhanced security.",
+      "Secure Your Ride, Anytime, Anywhere! Track and protect your two-wheeler with this advanced GPS Tracker. Designed for motorcycles, scooters, and other two-wheelers, it ensures real-time location tracking and enhanced security.",
     keyFeatures: [
       "Real-Time Tracking: Monitor your vehicle's exact location via a mobile app with live updates.",
       "Geo-Fencing Alerts: Set safe zones and receive instant notifications if your vehicle leaves the designated area.",
@@ -532,51 +405,75 @@ export const products = [
       "App Integration: Compatible with Android and iOS devices for seamless control and monitoring.",
       "Weatherproof Design: Durable, water-resistant casing ensures reliable performance in all conditions.",
     ],
-    whyItsPerfect: [
+    benefits: [
       "Protects against theft and unauthorized use.",
       "Helps monitor fleet vehicles for businesses.",
       "Ensures peace of mind for long-distance riders.",
     ],
-    whyChooseUs:
-      "At Gadgenix.store, we provide cutting-edge gadgets that keep you connected and secure. Enjoy premium quality, fast delivery, and dedicated customer support.",
+    company:
+      "Why Choose Gadgenix.store? At Gadgenix.store, we provide cutting-edge gadgets that keep you connected and secure. Enjoy premium quality, fast delivery, and dedicated customer support.",
   },
+
   {
     id: 4,
-    name: "Multi-Functional Electric Scalp Massager for Therapeutic Deep Tissue Vibrating Health Care",
-    tagline: "Relax, Rejuvenate, and Recharge!",
-    pathname: "Multi-functional-Electric-Scalp-Massager",
-    price: 999,
-    stock: false,
-    images: [homeproduct4],
+    name: "Portable Blender- 500 Watts (3 Jars, Silver)",
+    pathname: "Portable-Blender-500-Watts",
+    image: homeproduct2,
+    price: 2400,
     rating: 5,
     description:
-      "Experience the ultimate in relaxation with the Multi-Functional Electric Scalp Massager. Designed for therapeutic deep tissue care, this innovative device promotes better blood circulation, reduces stress, and relieves tension effortlessly.",
+      "Blend Anywhere, Anytime! Make fresh smoothies, shakes, and juices on the go with this Portable Blender. Compact, rechargeable, and powerful, it’s the ultimate gadget for every health enthusiast and busy individual.",
     keyFeatures: [
-      "Deep Tissue Vibrating Massage: Targets scalp muscles with precision, offering a soothing and revitalizing experience.",
-      "Multi-Functional Design: Perfect for scalp, neck, shoulders, and other areas needing relief.",
-      "Customizable Settings: Choose from multiple vibration modes and intensity levels to suit your needs.",
-      "Ergonomic & Portable: Compact, lightweight design with an easy-grip handle for effortless use anywhere.",
-      "Rechargeable & Wireless: Long-lasting battery with USB charging for convenience.",
-      "Waterproof Build: Safe for use during showers for an enhanced massage experience.",
-      "Premium Materials: Made with skin-friendly, durable materials for a comfortable and safe massage.",
+      "Powerful Performance: Equipped with a high-speed motor and stainless steel blades to blend fruits, vegetables, and ice effortlessly.",
+      "USB Rechargeable: Long-lasting battery that charges via USB, making it perfect for travel, work, or outdoor adventures.",
+      "Compact & Lightweight: Fits easily in your bag, cup holder, or backpack for ultimate portability.",
+      "One-Touch Operation: Simple to use with a single button for blending and cleaning.",
+      "Safe & Durable: Made from BPA-free, food-grade materials with a safety lock system to prevent spills.",
+      "Easy to Clean: Detachable parts make cleaning quick and hassle-free.",
     ],
-    whyItsPerfect: [
-      "Reduces stress and tension.",
-      "Improves blood circulation for healthier hair and skin.",
-      "Enhances relaxation and overall well-being.",
-    ],
+    perfectFor: ["Smoothies", "Protein Shakes", "Fresh Juices", "Baby Food"],
+    company:
+      "Why Choose Gadgenix.store? We bring you innovative gadgets designed to simplify your life. With fast shipping, reliable quality, and exceptional customer support, your satisfaction is our priority.",
+    order: "Order Now and Enjoy Fresh Blends Anytime, Anywhere!",
   },
+
   {
     id: 5,
+    name: "Retractable Car Charger for Android/iPhone",
+    pathname: "Retractable-Car-Charger-for-Android-iPhone",
+    price: 2500,
+    image: homeproduct1,
+    rating: 5,
+    description:
+      "Stay Powered On the Go! The perfect companion for your road trips, daily commutes, or quick errands. This Retractable Car Charger is designed to keep your devices fully charged without the clutter of tangled cables.",
+    keyFeatures: [
+      "Universal Compatibility: Works seamlessly with Android (USB-C/Micro-USB) and iPhone (Lightning) devices.",
+      "Retractable Design: Adjustable cable length keeps your car neat and organized while preventing cable damage.",
+      "Fast Charging: Delivers high-speed charging to power up your devices quickly and efficiently.",
+      "Dual Charging Options: Features a built-in cable and an additional USB port to charge two devices simultaneously.",
+      "Compact & Durable: Lightweight, portable, and built to withstand daily use with premium materials.",
+      "LED Indicator: Soft LED light shows the charger is active and ready to use, even in low light.",
+    ],
+    callToAction:
+      "Upgrade your car charging experience with this sleek and functional gadget. Perfect for anyone who values convenience and style.",
+    company:
+      "Why Choose Us? At Gadgenix.store, we offer innovative gadgets that make your life easier. Enjoy fast shipping, reliable customer service, and a product you can trust.",
+    order: "Order Now and Never Run Out of Power on the Road!",
+  },
+];
+
+export const products = [
+  {
+    id: 1,
     name: "3 in 1 Magnetic Foldable MagSafe Compatible Wireless Charger",
     pathname: "3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger",
     price: 1999,
     images: [
+      homeproduct58,
       homeproduct5,
       // homeproduct51,
       homeproduct52,
       homeproduct53,
-      homeproduct58,
     ],
     videos: [homeproduct54, homeproduct55, homeproduct56, homeproduct57],
     rating: 5,
@@ -702,5 +599,114 @@ export const products = [
       batteryLifeImprovement:
         "Comparing the Battery Health of devices charged on Wireless Charging to Wired Cable Charging, study shows a clear improvement in battery life by a whopping 65% over time. Can be validated by checking the Maximum Capacity in Battery Health under settings on an iPhone.",
     },
+  },
+
+  {
+    id: 2,
+    name: "Multi-Functional Electric Scalp Massager for Therapeutic Deep Tissue Vibrating Health Care",
+    tagline: "Relax, Rejuvenate, and Recharge!",
+    pathname: "Multi-functional-Electric-Scalp-Massager",
+    price: 999,
+    stock: false,
+    images: [homeproduct4],
+    rating: 5,
+    description:
+      "Experience the ultimate in relaxation with the Multi-Functional Electric Scalp Massager. Designed for therapeutic deep tissue care, this innovative device promotes better blood circulation, reduces stress, and relieves tension effortlessly.",
+    keyFeatures: [
+      "Deep Tissue Vibrating Massage: Targets scalp muscles with precision, offering a soothing and revitalizing experience.",
+      "Multi-Functional Design: Perfect for scalp, neck, shoulders, and other areas needing relief.",
+      "Customizable Settings: Choose from multiple vibration modes and intensity levels to suit your needs.",
+      "Ergonomic & Portable: Compact, lightweight design with an easy-grip handle for effortless use anywhere.",
+      "Rechargeable & Wireless: Long-lasting battery with USB charging for convenience.",
+      "Waterproof Build: Safe for use during showers for an enhanced massage experience.",
+      "Premium Materials: Made with skin-friendly, durable materials for a comfortable and safe massage.",
+    ],
+    whyItsPerfect: [
+      "Reduces stress and tension.",
+      "Improves blood circulation for healthier hair and skin.",
+      "Enhances relaxation and overall well-being.",
+    ],
+  },
+
+  {
+    id: 3,
+    name: "Bike GPS Tracking Device for Car, SUV, Scooty, Bus, Truck, JCB etc. & All E-Vehicles",
+    tagline: "Secure Your Ride, Anytime, Anywhere!",
+    pathname: "Bike-GPS-Tracking-Device-for-Car",
+    price: 1200,
+    rating: 5,
+    stock: false,
+
+    images: [homeproduct3],
+    description:
+      "Track and protect your two-wheeler with this advanced GPS Tracker. Designed for motorcycles, scooters, and other two-wheelers, it ensures real-time location tracking and enhanced security.",
+    keyFeatures: [
+      "Real-Time Tracking: Monitor your vehicle's exact location via a mobile app with live updates.",
+      "Geo-Fencing Alerts: Set safe zones and receive instant notifications if your vehicle leaves the designated area.",
+      "Anti-Theft Alarm: Built-in motion detection triggers alerts for unauthorized movements or tampering.",
+      "Route History Playback: Access past routes and travel history for up to 90 days.",
+      "Compact & Discreet: Small, lightweight design that’s easy to install and hard to detect.",
+      "Battery Backup: Includes a rechargeable backup battery for uninterrupted tracking, even if disconnected.",
+      "App Integration: Compatible with Android and iOS devices for seamless control and monitoring.",
+      "Weatherproof Design: Durable, water-resistant casing ensures reliable performance in all conditions.",
+    ],
+    whyItsPerfect: [
+      "Protects against theft and unauthorized use.",
+      "Helps monitor fleet vehicles for businesses.",
+      "Ensures peace of mind for long-distance riders.",
+    ],
+    whyChooseUs:
+      "At Gadgenix.store, we provide cutting-edge gadgets that keep you connected and secure. Enjoy premium quality, fast delivery, and dedicated customer support.",
+  },
+  {
+    id: 4,
+    name: "Portable Blender - 500 Watts (3 Jars, Silver)",
+    tagline: "Blend Anywhere, Anytime!",
+    pathname: "Portable-Blender-500-Watts",
+    images: [homeproduct2],
+    price: 2400,
+    stock: false,
+
+    rating: 5,
+    description:
+      "Make fresh smoothies, shakes, and juices on the go with this Portable Blender. Compact, rechargeable, and powerful, it’s the ultimate gadget for every health enthusiast and busy individual.",
+    keyFeatures: [
+      "Powerful Performance: Equipped with a high-speed motor and stainless steel blades to blend fruits, vegetables, and ice effortlessly.",
+      "USB Rechargeable: Long-lasting battery that charges via USB, making it perfect for travel, work, or outdoor adventures.",
+      "Compact & Lightweight: Fits easily in your bag, cup holder, or backpack for ultimate portability.",
+      "One-Touch Operation: Simple to use with a single button for blending and cleaning.",
+      "Safe & Durable: Made from BPA-free, food-grade materials with a safety lock system to prevent spills.",
+      "Easy to Clean: Detachable parts make cleaning quick and hassle-free.",
+    ],
+    perfectFor: ["Smoothies", "Protein Shakes", "Fresh Juices", "Baby Food"],
+    whyChooseUs:
+      "We bring you innovative gadgets designed to simplify your life. With fast shipping, reliable quality, and exceptional customer support, your satisfaction is our priority.",
+    finalCTA: "Order Now and Enjoy Fresh Blends Anytime, Anywhere!",
+  },
+  {
+    id: 5,
+    name: "Retractable Car Charger for Android/iPhone",
+    pathname: "Retractable-Car-Charger-for-Android-iPhone",
+    price: 2500,
+    image: homeproduct1,
+    images: [homeproduct12, homeproduct13],
+
+    rating: 5,
+    stock: false,
+    tagline: "Stay Powered On the Go!",
+    description:
+      "The perfect companion for your road trips, daily commutes, or quick errands. This Retractable Car Charger is designed to keep your devices fully charged without the clutter of tangled cables.",
+    keyFeatures: [
+      "Universal Compatibility: Works seamlessly with Android (USB-C/Micro-USB) and iPhone (Lightning) devices.",
+      "Retractable Design: Adjustable cable length keeps your car neat and organized while preventing cable damage.",
+      "Fast Charging: Delivers high-speed charging to power up your devices quickly and efficiently.",
+      "Dual Charging Options: Features a built-in cable and an additional USB port to charge two devices simultaneously.",
+      "Compact & Durable: Lightweight, portable, and built to withstand daily use with premium materials.",
+      "LED Indicator: Soft LED light shows the charger is active and ready to use, even in low light.",
+    ],
+    cta: "Upgrade your car charging experience with this sleek and functional gadget. Perfect for anyone who values convenience and style.",
+    whyChooseUs:
+      "At Gadgenix.store, we offer innovative gadgets that make your life easier. Enjoy fast shipping, reliable customer service, and a product you can trust.",
+    finalCTA: "Order Now and Never Run Out of Power on the Road!",
   },
 ];
