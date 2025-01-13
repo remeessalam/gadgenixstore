@@ -30,13 +30,13 @@ const ProductItem = () => {
   };
   console.log(products, id, "asdfasd");
 
-  useEffect(() => {
-    setIsPlaying(false);
-    setShowThumbnail(true);
-    if (playerRef.current) {
-      playerRef.current;
-    }
-  }, [selectedVideo]);
+  // useEffect(() => {
+  //   setIsPlaying(false);
+  //   setShowThumbnail(true);
+  //   if (playerRef.current) {
+  //     playerRef.current;
+  //   }
+  // }, [selectedVideo]);
 
   // Find the product based on the productname in the URL
   useEffect(() => {
@@ -63,6 +63,8 @@ const ProductItem = () => {
       playerRef.current.getInternalPlayer().pause();
     }
     setSelectedVideo(video);
+    setIsPlaying(true);
+    setShowThumbnail(false);
   };
 
   const togglePlayPause = () => {
@@ -376,7 +378,13 @@ const ProductItem = () => {
                 className={`flex-shrink-0 w-24 h-24 rounded-lg bg-zinc-900 p-2 cursor-pointer ${
                   video === selectedVideo ? "ring-2 ring-primary" : ""
                 }`}
-                onClick={() => handleVideoSelect(video)}
+                onClick={() =>
+                  !isPlaying
+                    ? handleVideoSelect(video)
+                    : (setSelectedVideo(null),
+                      handlePause(),
+                      handleVideoSelect(video))
+                }
               >
                 <img
                   src={product.images[2]}
