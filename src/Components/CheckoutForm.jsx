@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserDetails } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";
+import { removeFromCart } from "../store/cartSlice";
 
 const CheckoutForm = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,8 @@ const CheckoutForm = () => {
     console.log("Form Submitted:", data);
     alert("Order placed successfully!");
     reset();
+    dispatch(removeFromCart(cartItems[0].id));
+    navigate("/products");
   };
   console.log(cartItems);
 
