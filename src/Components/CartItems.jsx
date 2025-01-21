@@ -2,12 +2,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { removeItem, updateQuantity } from "../store/cartSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CartItems = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const handleUpdateQuantity = (id, newQuantity) => {
     dispatch(updateQuantity({ id, quantity: newQuantity }));
   };
@@ -86,13 +86,21 @@ const CartItems = () => {
 
             <div
               data-aos="fade-up"
-              className="flex justify-end py-4 border-t border-gray-700 mt-4"
+              className="flex justify-end py-4 items-center gap-5 border-t border-gray-700 mt-4"
             >
               <div className="text-right">
                 <span className="uppercase font-medium">Cart Total = </span>
                 <span className="text-xl font-bold">
                   ₹{calculateTotal().toFixed(2)}
                 </span>
+              </div>
+              <div>
+                <button
+                  onClick={() => navigate("/checkout")}
+                  className="mt-auto bg-transparent border border-orange-500 text-orange-500 py-2 px-4 rounded-lg hover:bg-orange-500 hover:text-white transition-colors flex items-center justify-center gap-2"
+                >
+                  Ready To Checkout
+                </button>
               </div>
             </div>
           </div>

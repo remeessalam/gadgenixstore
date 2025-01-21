@@ -62,10 +62,12 @@ const ProductCarousel = () => {
           <div data-aos="fade-up" className="flex items-center gap-2 mb-4">
             <h1 className="text-4xl font-bold">Latest Arrival Products</h1>
           </div>
-
+          <h3 className="text-white text-lg font-medium mb-2">
+            {products[0]?.name}
+          </h3>
           <div data-aos="fade-up" className="mb-4">
             {/* <span className="text-gray-500 line-through mr-2">$99.00</span> */}
-            <span className="text-2xl font-bold">₹{products[4]?.price}</span>
+            <span className="text-2xl font-bold">₹{products[0]?.price}</span>
           </div>
 
           <p data-aos="fade-up" className="text-gray-300 mb-6 max-w-2xl">

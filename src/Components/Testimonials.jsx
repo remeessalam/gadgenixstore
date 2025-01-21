@@ -42,7 +42,7 @@ const Testimonials = () => {
         <div className="flex sm:flex-row flex-col items-center gap-8">
           <div data-aos="fade-right" className="flex-1">
             <h3 className="text-2xl font-bold mb-2">{current.name}</h3>
-            <p className="text-orange-500 mb-4">{current.position}</p>
+            {/* <p className="text-orange-500 mb-4">{current.position}</p> */}
             <div className="relative">
               <p className="text-lg mb-4">
                 <span className="text-orange-500 text-6xl absolute -left-8 -top-4">

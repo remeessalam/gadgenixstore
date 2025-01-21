@@ -48,6 +48,9 @@ const LatestProduct = () => {
               </div>
               <div className="p-4 min-h-[256px] flex flex-col justify-between">
                 <h3 className="text-lg font-semibold mb-2">{product?.name}</h3>
+                <h3 className="text-red-500 text-lg font-medium mb-2">
+                  {!product?.stock && "SOLD OUT"}
+                </h3>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-gray-400 line-through">
                     {/* ${product.originalPrice.toFixed(2)} */}

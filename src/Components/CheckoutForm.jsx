@@ -1,15 +1,27 @@
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserDetails } from "../store/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
-
+  const cartItems = useSelector((state) => state.cart.items);
+  if (cartItems.length === 0) navigate("/products");
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(setUserDetails(data));
+    console.log("Form Submitted:", data);
+    alert("Order placed successfully!");
+    reset();
   };
+  console.log(cartItems);
 
   return (
     <div className=" bg-black spacebetween">
@@ -177,11 +189,16 @@ const CheckoutForm = () => {
               </div>
 
               <div data-aos="fade-up" className="space-y-2">
-                <div className="flex justify-between text-gray-300">
-                  <span>Charging Dock</span>
-                  <span>₹15.00</span>
-                </div>
-                <div className="flex justify-between text-gray-300">
+                {cartItems.map((obj) => (
+                  <div
+                    key={obj?.id}
+                    className="flex justify-between text-gray-300"
+                  >
+                    <span>{obj.name}</span>
+                    <span>₹{obj.price}</span>
+                  </div>
+                ))}
+                {/* <div className="flex justify-between text-gray-300">
                   <span>All-in-One Charger</span>
                   <span>₹15.00</span>
                 </div>
@@ -196,15 +213,17 @@ const CheckoutForm = () => {
                 <div className="flex justify-between text-gray-300">
                   <span>Wireless Charger</span>
                   <span>₹15.00</span>
-                </div>
+                </div> */}
               </div>
 
               <div
                 data-aos="fade-up"
                 className="flex justify-between border-t border-gray-700 pt-2"
               >
-                <span className="font-medium text-white">Subtotal</span>
-                <span className="font-medium text-white">₹75.00</span>
+                <span className="font-medium text-white">Total</span>
+                <span className="font-medium text-white">
+                  ₹{cartItems[0]?.price * cartItems[0]?.quantity}
+                </span>
               </div>
 
               <div data-aos="fade-up" className="rounded bg-[#222] p-4">
