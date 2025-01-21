@@ -103,7 +103,7 @@ const HomeBanner = () => {
                 data-aos="fade-up"
                 className="text-4xl mt-4 mb-4 sm:mb-0 font-bold text-orange-500"
               >
-                ₹1999.00
+                <span className="line-through">₹2299</span> ₹1999.00
               </div>
             </div>
           </div>

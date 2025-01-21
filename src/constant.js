@@ -267,6 +267,7 @@ export const otherProducts = [
     pathname: "3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger",
     image: homeproduct5,
     price: 1999,
+    crossprice: 2299,
     rating: 5,
     images: [homeproduct5],
     title:
@@ -472,6 +473,7 @@ export const products = [
     name: "3 in 1 Magnetic Foldable MagSafe Compatible Wireless Charger",
     pathname: "3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger",
     price: 1999,
+    crossprice: 2299,
     images: [
       homeproduct58,
       homeproduct5,

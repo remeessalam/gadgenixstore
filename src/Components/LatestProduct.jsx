@@ -53,7 +53,7 @@ const LatestProduct = () => {
                 </h3>
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-gray-400 line-through">
-                    {/* ${product.originalPrice.toFixed(2)} */}
+                    {product?.crossprice && `₹${product?.crossprice}`}
                   </span>
                   <span className="text-orange-500 font-bold">
                     ₹{product?.price?.toFixed(2)}

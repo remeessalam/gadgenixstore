@@ -19,6 +19,7 @@ const SpecialOffers = () => {
       pathname: "3-in-1-Magnetic-Foldable-MagSafe-Compatible-Wireless-Charger",
       price: 1999,
       images: homeproduct5,
+      crossprice: 2299,
 
       rating: 5,
       stock: true,
@@ -174,6 +175,9 @@ const SpecialOffers = () => {
               {/* <span className="text-gray-400 line-through">
                 ${product.originalPrice.toFixed(2)}
               </span> */}
+              <span className="text-gray-400 line-through">
+                {product?.crossprice && `₹${product?.crossprice}`}
+              </span>
               <span className="text-orange-500 font-bold">
                 ₹{product.price.toFixed(2)}
               </span>

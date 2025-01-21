@@ -136,9 +136,9 @@ const ProductItem = () => {
               {product.name}
             </h1>
             <div data-aos="fade-up" className="flex items-center gap-4">
-              {/* <span className="text-gray-400 line-through">
-              {product.price}
-            </span> */}
+              <span className="text-gray-500 line-through text-2xl font-bold">
+                {product?.crossprice && `₹${product?.crossprice}`}
+              </span>{" "}
               <span className="text-2xl text-orange-500">
                 {/* ${(product.price / 100).toFixed()} */}₹{product.price}
               </span>

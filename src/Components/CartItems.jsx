@@ -54,6 +54,9 @@ const CartItems = () => {
                   </div>
                   <div className="col-span-2 text-right">
                     <h1 className="sm:hidden flex">Price</h1>₹
+                    <span className="line-through">
+                      {item?.crossprice?.toFixed(2)}
+                    </span>{" "}
                     {item.price.toFixed(2)}
                   </div>
                   <h1 className="sm:hidden flex">Quantity</h1>

@@ -60,9 +60,9 @@ const HomeProduct = () => {
                 {!product?.stock && "SOLD OUT"}
               </h3>
               <div className="flex items-center gap-2 mb-2">
-                {/* <span className="text-gray-500 line-through">
-                  ${product.originalPrice.toFixed(2)}
-                </span> */}
+                <span className="text-gray-500 line-through">
+                  {product?.crossprice && `₹${product?.crossprice}`}
+                </span>
                 <span className="text-orange-500">
                   ₹{product.price.toFixed(2)}
                 </span>

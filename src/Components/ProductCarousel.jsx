@@ -67,11 +67,14 @@ const ProductCarousel = () => {
           </h3>
           <div data-aos="fade-up" className="mb-4">
             {/* <span className="text-gray-500 line-through mr-2">$99.00</span> */}
-            <span className="text-2xl font-bold">₹{products[0]?.price}</span>
+            <span className="text-gray-500 line-through text-2xl font-bold">
+              {products[0]?.crossprice && `₹${products[0]?.crossprice}`}
+            </span>{" "}
+            <span className="text-2xl font-bold"> ₹{products[0]?.price}</span>
           </div>
 
           <p data-aos="fade-up" className="text-gray-300 mb-6 max-w-2xl">
-            {products[4].description}
+            {products[0].description}
           </p>
 
           <div className="mb-8">
