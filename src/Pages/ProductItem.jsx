@@ -224,6 +224,10 @@ const ProductItem = () => {
                 </button>
               )}
             </div>
+            <p>
+              Refunds are not applicable, but we will arrange a replacement for
+              any product with physical damage upon delivery.
+            </p>
             {/* Key Features */}
             <div className="space-y-4 border-t border-gray-800 pt-6">
               <h2 data-aos="fade-up" className="text-xl font-semibold">

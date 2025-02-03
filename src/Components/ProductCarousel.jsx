@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import carousalimage1 from "../assets/images/carousalimage1.jpeg";
+// import carousalimage1 from "../assets/images/carousalimage1.jpeg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { products } from "../constant";
 const ProductCarousel = () => {

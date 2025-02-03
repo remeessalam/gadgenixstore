@@ -1,5 +1,5 @@
 import { FaStar } from "react-icons/fa";
-import { homeproducts, products } from "../constant";
+import { products } from "../constant";
 import { useState } from "react";
 import { BiEnvelopeOpen } from "react-icons/bi";
 import { Link } from "react-router-dom";
