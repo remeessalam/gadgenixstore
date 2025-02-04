@@ -165,6 +165,7 @@ const ProductItem = () => {
             {product.id === 1 && (
               <div className="flex gap-2">
                 <h1
+                  data-aos="fade-up"
                   onClick={() => chooseProductColor("white")}
                   className={`py-2 px-3 rounded-2xl border w-fit ${
                     color === "white" ? `bg-white text-black` : `bg-`
@@ -173,6 +174,7 @@ const ProductItem = () => {
                   white
                 </h1>
                 <h1
+                  data-aos="fade-up"
                   onClick={() => chooseProductColor("black")}
                   className={`py-2 px-3 rounded-2xl border w-fit ${
                     color === "black" ? `bg-white text-black` : `bg-`
@@ -224,7 +226,7 @@ const ProductItem = () => {
                 </button>
               )}
             </div>
-            <p>
+            <p data-aos="fade-up">
               Refunds are not applicable, but we will arrange a replacement for
               any product with physical damage upon delivery.
             </p>
@@ -278,7 +280,7 @@ const ProductItem = () => {
               <h2 data-aos="fade-up" className="text-3xl font-semibold mb-2">
                 Product Details
               </h2>
-              <div className="space-y-4">
+              <div data-aos="fade-up" className="space-y-4">
                 <h2>
                   {product?.details?.connectivityTechnology &&
                     "Connectivity Technology: "}

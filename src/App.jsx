@@ -12,6 +12,8 @@ import ProductItem from "./Pages/ProductItem";
 import LandingPage from "./Pages/LandingPage";
 import ScrollToTop from "./Components/ScrollTop";
 import { Toaster } from "react-hot-toast";
+import Signup from "./Pages/Auth/Signup";
+import Login from "./Pages/Auth/Login";
 
 const AppRouter = createBrowserRouter([
   {
@@ -43,5 +45,7 @@ const AppRouter = createBrowserRouter([
       { path: "/landing-page", element: <LandingPage /> },
     ],
   },
+  { path: "/signup", element: <Signup /> },
+  { path: "/login", element: <Login /> },
 ]);
 export default AppRouter;
