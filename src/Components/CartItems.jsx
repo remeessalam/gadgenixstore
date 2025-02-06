@@ -1,10 +1,13 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { removeItem, updateQuantity } from "../store/cartSlice";
 import { Link, useNavigate } from "react-router-dom";
+import { checkAuth } from "../API/authAPI";
+import useCartInitialization from "../Hooks/getUserCart";
 
 const CartItems = () => {
+  useCartInitialization();
+
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,6 +25,14 @@ const CartItems = () => {
       0
     );
   };
+  const readyToCheckOut = () => {
+    if (checkAuth()) {
+      navigate("/checkout");
+    } else {
+      navigate("/login", { state: { from: "/checkout" } });
+    }
+  };
+
   console.log(cartItems, "asdfasdfas");
   return (
     <div className="">
@@ -50,7 +61,18 @@ const CartItems = () => {
                       alt={item.name}
                       className="w-16 h-16 object-cover rounded"
                     />
-                    <span className="font-medium">{item.name}</span>
+                    <span className="font-medium">
+                      {item.name},
+                      <span
+                        className={`${
+                          item.color === "white"
+                            ? `bg-white text-black p-2 rounded-lg ml-2`
+                            : `bg-black text-white p-2 rounded-lg ml-2`
+                        }`}
+                      >
+                        {item?.color && item?.color}
+                      </span>
+                    </span>
                   </div>
                   <div className="col-span-2 text-right">
                     <h1 className="sm:hidden flex">Price</h1>₹
@@ -64,7 +86,7 @@ const CartItems = () => {
                     <input
                       type="number"
                       min="1"
-                      value={item.quantity}
+                      value={item?.quantity}
                       onChange={(e) =>
                         handleUpdateQuantity(item.id, e.target.value)
                       }
@@ -99,7 +121,7 @@ const CartItems = () => {
               </div>
               <div>
                 <button
-                  onClick={() => navigate("/checkout")}
+                  onClick={readyToCheckOut}
                   className="mt-auto bg-transparent border border-orange-500 text-orange-500 py-2 px-4 rounded-lg hover:bg-orange-500 hover:text-white transition-colors flex items-center justify-center gap-2"
                 >
                   Ready To Checkout

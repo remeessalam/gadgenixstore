@@ -1,14 +1,24 @@
-// cartAPI.js
-import axios from "axios";
-
-const API_BASE_URL = "http://localhost:8080"; // Replace with your backend base URL
+import { apiRequest } from "./ApiHandler";
 
 export const addToCartAPI = async (cartItem) => {
+  return apiRequest("POST", "/api/cart", {
+    userId: cartItem.userID, // Ensure userId is passed
+    product: {
+      id: cartItem.id,
+      name: cartItem.name,
+      price: cartItem.price,
+      image: cartItem.image,
+      quantity: cartItem.quantity,
+      color: cartItem.color || "",
+    },
+  });
+};
+export const getCartAPI = async (userId) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/api/cart`, cartItem);
-    return response.data; // Return the response data if needed
+    const response = await apiRequest("GET", `/api/cart/${userId}`);
+    return response; // Ensure response is returned properly
   } catch (error) {
-    console.error("Error adding to cart:", error);
-    throw error; // Throw the error to handle it in the component
+    console.error("Error fetching cart:", error);
+    throw error;
   }
 };

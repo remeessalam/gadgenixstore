@@ -6,6 +6,7 @@ import { IoMdClose } from "react-icons/io";
 
 const Header = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem("authToken")); // Fetch token from localStorage initially
 
   const toggleMobileNav = () => {
     setMobileNavOpen((prev) => !prev);
@@ -15,22 +16,28 @@ const Header = () => {
     setMobileNavOpen(false);
   };
 
+  const logout = () => {
+    localStorage.removeItem("authToken");
+    setToken(null);
+  };
+
   return (
     <header className="fixed w-screen overflow-hidden bg-headerbgcolor py-4 px-6 text-white z-40">
       <div className="flex items-center justify-between">
         <div className="w-full grid md:grid-cols-6 items-center gap-2">
-          <div className="md:col-span-2  flex items-center gap-3">
+          <div className="md:col-span-2 flex items-center gap-3">
             <Link to={"/"}>
-              <div className="h-16 w-16 sm:h-20 sm:w-20 bg-primary rounded-full  overflow-hidden">
-                <img src={logo} alt="logo" className="scale-150 " />
+              <div className="h-16 w-16 sm:h-20 sm:w-20 bg-primary rounded-full overflow-hidden">
+                <img src={logo} alt="logo" className="scale-150" />
               </div>
             </Link>
             <Link to={"/"}>
-              <h4 className="text-lg font-semibold  text-white">
+              <h4 className="text-lg font-semibold text-white">
                 Gadgenix Store
               </h4>
             </Link>
           </div>
+
           {/* DESKTOP NAVIGATION */}
           <nav className="hidden md:flex items-center gap-8 md:col-span-4 ml-[6rem]">
             {routes.map((obj) => (
@@ -42,6 +49,20 @@ const Header = () => {
                 {obj.name}
               </Link>
             ))}
+
+            <Link
+              to={token ? "#" : "/login"} // If token exists, don't navigate; otherwise, go to login
+              className="text-foreground hover:text-orange-100 bg-primary p-2 rounded-md hover:bg-primary/60"
+              onClick={() => {
+                if (token) {
+                  logout(); // If token exists, call logout function
+                }
+                closeMobileNav();
+              }}
+            >
+              {token ? "LogOut" : "Login"}{" "}
+              {/* Display Login if no token, otherwise LogOut */}
+            </Link>
           </nav>
         </div>
 
@@ -71,6 +92,19 @@ const Header = () => {
                   {obj.name}
                 </Link>
               ))}
+              <Link
+                to={token ? "#" : "/login"} // If token exists, don't navigate; otherwise, go to login
+                className="text-foreground hover:text-primary"
+                onClick={() => {
+                  if (token) {
+                    logout(); // If token exists, call logout function
+                  }
+                  closeMobileNav();
+                }}
+              >
+                {token ? "LogOut" : "Login"}{" "}
+                {/* Display Login if no token, otherwise LogOut */}
+              </Link>
             </nav>
           </div>
         )}

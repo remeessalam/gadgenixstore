@@ -77,6 +77,7 @@ export const routes = [
   { name: "Products", path: "/products" },
   { name: "Cart", path: "/cart" },
   { name: "Contact Us", path: "/contact-us" },
+  // { name: "Login", path: "/login" },
 ];
 
 export const categories = [

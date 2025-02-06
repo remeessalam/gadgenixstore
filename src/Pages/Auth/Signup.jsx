@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { signUp } from "../../API/authAPI";
 
 const Signup = () => {
   const {
@@ -16,18 +16,20 @@ const Signup = () => {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const response = await axios.post("/api/signup", {
+      const response = await signUp({
         fullName: data.fullName,
         mobile: data.mobile,
         email: data.email,
         password: data.password,
       });
-
-      if (response.data.success) {
-        navigate("/login");
+      console.log(response, "adfasdf");
+      if (response.success) {
+        navigate("/");
+      } else {
+        setError(response?.message || "Signup failed");
       }
     } catch (err) {
-      setError(err.response?.data?.message || "Signup failed");
+      setError(err.response?.message || "Signup failed");
     } finally {
       setLoading(false);
     }

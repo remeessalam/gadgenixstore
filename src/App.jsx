@@ -14,7 +14,7 @@ import ScrollToTop from "./Components/ScrollTop";
 import { Toaster } from "react-hot-toast";
 import Signup from "./Pages/Auth/Signup";
 import Login from "./Pages/Auth/Login";
-
+import ProtectedRoute from "./ProtectedRoute.jsx";
 const AppRouter = createBrowserRouter([
   {
     path: "/",
@@ -37,7 +37,11 @@ const AppRouter = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/products", element: <ProductPage /> },
-      { path: "/checkout", element: <CheckOutPage /> },
+      {
+        path: "/checkout",
+        element: <ProtectedRoute element={<CheckOutPage />} />,
+      },
+
       { path: "/cart", element: <CartPage /> },
       { path: "/contact-us", element: <ContactPage /> },
       { path: "/about-us", element: <AboutPage /> },

@@ -6,6 +6,9 @@ import ReactPlayer from "react-player";
 import { BsPause, BsPlay } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/cartSlice";
+import toast from "react-hot-toast";
+import { addToCartAPI } from "../API/cartAPI";
+import useCartInitialization from "../Hooks/getUserCart";
 
 const ProductItem = () => {
   const { id } = useParams(); // Extract product name from URL
@@ -20,7 +23,8 @@ const ProductItem = () => {
   const [color, setColor] = useState("white");
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
-
+  const userId = useSelector((state) => state.userDetails.userId);
+  console.log(userId, "asdfasdfsdf");
   const decreaseQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
@@ -29,7 +33,7 @@ const ProductItem = () => {
     setQuantity(quantity + 1);
   };
   console.log(products, id, "asdfasd");
-
+  useCartInitialization();
   // useEffect(() => {
   //   setIsPlaying(false);
   //   setShowThumbnail(true);
@@ -81,17 +85,28 @@ const ProductItem = () => {
     setIsPlaying(false);
   };
 
-  const addToCartHandler = () => {
+  const addToCartHandler = async () => {
     console.log(product, "asdfasdfs");
-    dispatch(
-      addToCart({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: selectedImage,
-        quantity: quantity,
-      })
-    );
+    const response = await addToCartAPI({
+      userID: userId,
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: selectedImage,
+      quantity: quantity,
+      color: color ? color : "",
+    });
+    console.log(response, "asdfasdfsadfs", response?.cart?.products);
+    if (response?.success) {
+      toast.success(response?.message);
+      console.log(product.id, product.name);
+      dispatch(
+        addToCart({
+          userID: response?.cart?.userId,
+          products: response?.cart?.products,
+        })
+      );
+    }
   };
   const isInCart = cartItems.some((item) => item.id === product.id);
   const chooseProductColor = (color) => {
@@ -99,6 +114,14 @@ const ProductItem = () => {
     color === "white"
       ? setSelectedImage(product.images[0])
       : setSelectedImage(product.images[5]);
+  };
+  const addToCartHandlerButton = () => {
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      toast.error("please Login to contiune");
+      return;
+    }
+    product?.stock && addToCartHandler();
   };
   return (
     <div>
@@ -163,9 +186,8 @@ const ProductItem = () => {
               {product?.stock ? "Ready To Ship " : "Not In Stock"}
             </h1>
             {product.id === 1 && (
-              <div className="flex gap-2">
+              <div data-aos="fade-up" className="flex gap-2">
                 <h1
-                  data-aos="fade-up"
                   onClick={() => chooseProductColor("white")}
                   className={`py-2 px-3 rounded-2xl border w-fit ${
                     color === "white" ? `bg-white text-black` : `bg-`
@@ -174,7 +196,6 @@ const ProductItem = () => {
                   white
                 </h1>
                 <h1
-                  data-aos="fade-up"
                   onClick={() => chooseProductColor("black")}
                   className={`py-2 px-3 rounded-2xl border w-fit ${
                     color === "black" ? `bg-white text-black` : `bg-`
@@ -214,7 +235,7 @@ const ProductItem = () => {
               ) : (
                 <button
                   // disabled={product?.stock}
-                  onClick={() => product?.stock && addToCartHandler()}
+                  onClick={addToCartHandlerButton}
                   data-aos="fade-up"
                   className={`${
                     product?.stock

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { login } from "../../API/authAPI";
 
 const Login = () => {
   const {
@@ -16,17 +16,15 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const response = await axios.post("/api/login", {
+      const response = await login({
         email: data.email,
         password: data.password,
       });
-
-      if (response.data.success) {
-        localStorage.setItem("token", response.data.token);
+      if (response.success) {
         navigate("/");
       }
     } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
+      setError(err.response?.message || "Login failed");
     } finally {
       setLoading(false);
     }
