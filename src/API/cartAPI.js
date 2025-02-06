@@ -22,3 +22,12 @@ export const getCartAPI = async (userId) => {
     throw error;
   }
 };
+export const removeCartItemAPI = async (productId) => {
+  try {
+    const response = await apiRequest("DELETE", `/api/cart/${productId}`);
+    return response;
+  } catch (error) {
+    console.error("Error fetching cart:", error);
+    throw error;
+  }
+};

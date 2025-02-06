@@ -63,7 +63,7 @@ const CheckoutForm = () => {
               />
             </div>
 
-            <div data-aos="fade-up">
+            {/* <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">
                 Company Name (Optional)
               </label>
@@ -71,7 +71,7 @@ const CheckoutForm = () => {
                 {...register("company")}
                 className="w-full rounded border border-gray-700 bg-[#1a1a1a] p-2.5 text-white focus:border-orange-500 focus:outline-none"
               />
-            </div>
+            </div> */}
 
             <div data-aos="fade-up">
               <label className="mb-1 block text-sm text-white">

@@ -4,6 +4,7 @@ import { removeItem, updateQuantity } from "../store/cartSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { checkAuth } from "../API/authAPI";
 import useCartInitialization from "../Hooks/getUserCart";
+import { removeCartItemAPI } from "../API/cartAPI";
 
 const CartItems = () => {
   useCartInitialization();
@@ -16,6 +17,8 @@ const CartItems = () => {
   };
 
   const handleRemoveItem = (id) => {
+    const response = removeCartItemAPI(id);
+    console.log(response, "ataldfasdf");
     dispatch(removeItem(id));
   };
 
@@ -61,18 +64,16 @@ const CartItems = () => {
                       alt={item.name}
                       className="w-16 h-16 object-cover rounded"
                     />
-                    <span className="font-medium">
-                      {item.name},
-                      <span
-                        className={`${
-                          item.color === "white"
-                            ? `bg-white text-black p-2 rounded-lg ml-2`
-                            : `bg-black text-white p-2 rounded-lg ml-2`
-                        }`}
-                      >
-                        {item?.color && item?.color}
-                      </span>
-                    </span>
+                    <span className="font-medium">{item.name},</span>
+                    <h1
+                      className={`p-2 rounded-lg ml-2 !mt-1 ${
+                        item.color === "white"
+                          ? `bg-white text-black `
+                          : `bg-black text-white `
+                      }`}
+                    >
+                      {item?.color && item?.color}
+                    </h1>
                   </div>
                   <div className="col-span-2 text-right">
                     <h1 className="sm:hidden flex">Price</h1>₹
