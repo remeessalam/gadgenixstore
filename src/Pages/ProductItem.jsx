@@ -11,8 +11,10 @@ import { addToCartAPI } from "../API/cartAPI";
 import useCartInitialization from "../Hooks/getUserCart";
 
 const ProductItem = () => {
+  const { cartData, loading, error } = useCartInitialization();
   const { id } = useParams(); // Extract product name from URL
   const [product, setProduct] = useState(null);
+  const [cartItemAdded,setCartItemAdded]
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
@@ -21,8 +23,10 @@ const ProductItem = () => {
   const playerRef = useRef(null);
   const [showThumbnail, setShowThumbnail] = useState(true);
   const [color, setColor] = useState("white");
-  const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.items);
+  const [cartItems, setCartItems] = useState(cartData?.products || []);
+
+  // const dispatch = useDispatch();
+  // const cartItems = useSelector((state) => state.cart.items);
   const userId = useSelector((state) => state.userDetails.userId);
   console.log(userId, "asdfasdfsdf");
   const decreaseQuantity = () => {
@@ -33,16 +37,11 @@ const ProductItem = () => {
     setQuantity(quantity + 1);
   };
   console.log(products, id, "asdfasd");
-  useCartInitialization();
-  // useEffect(() => {
-  //   setIsPlaying(false);
-  //   setShowThumbnail(true);
-  //   if (playerRef.current) {
-  //     playerRef.current;
-  //   }
-  // }, [selectedVideo]);
-
-  // Find the product based on the productname in the URL
+  useEffect(() => {
+    if (cartData?.products) {
+      setCartItems(cartData.products);
+    }
+  }, [cartData]);
   useEffect(() => {
     const foundProduct = products.find(
       (prod) =>
@@ -100,12 +99,13 @@ const ProductItem = () => {
     if (response?.success) {
       toast.success(response?.message);
       console.log(product.id, product.name);
-      dispatch(
-        addToCart({
-          userID: response?.cart?.userId,
-          products: response?.cart?.products,
-        })
-      );
+      setCartItemAdded(true)
+      // dispatch(
+      //   addToCart({
+      //     userID: response?.cart?.userId,
+      //     products: response?.cart?.products,
+      //   })
+      // );
     }
   };
   const isInCart = cartItems.some((item) => item.id === product.id);
@@ -123,6 +123,11 @@ const ProductItem = () => {
     }
     product?.stock && addToCartHandler();
   };
+
+  if (loading) return <p>Loading cart...</p>;
+  if (error) {
+    toast.error(error);
+  }
   return (
     <div>
       <div className="bg-black text-white pt-[96px] sm:pt-[112px]">

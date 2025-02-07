@@ -1,11 +1,12 @@
-import { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useRef, useState } from "react";
 import { getCartAPI } from "../API/cartAPI";
-import { addToCart } from "../store/cartSlice";
 
 const useCartInitialization = () => {
-  const dispatch = useDispatch();
+  const [cartData, setCartData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const initialized = useRef(false);
+
   useEffect(() => {
     if (initialized.current) return;
     initialized.current = true;
@@ -17,22 +18,24 @@ const useCartInitialization = () => {
       if (token && userId) {
         try {
           const response = await getCartAPI(userId);
+          console.log(response, "sadfasdfasdfs");
           if (response?.success) {
-            dispatch(
-              addToCart({
-                userID: response.cart.userId,
-                products: response.cart.products,
-              })
-            );
+            setCartData(response.cart);
+          } else {
+            setError("Failed to fetch cart data.");
           }
-        } catch (error) {
-          console.error("Error initializing cart:", error);
+        } catch (err) {
+          console.error("Error initializing cart:", err);
+          setError(err.message);
         }
       }
+      setLoading(false);
     };
 
     initializeCart();
-  }, [dispatch]);
+  }, []);
+  console.log(cartData, "asdfasdfasdf");
+  return { cartData, loading, error };
 };
 
 export default useCartInitialization;

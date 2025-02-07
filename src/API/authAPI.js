@@ -70,3 +70,18 @@ export const getUser = async () => {
   });
   console.log(response, "sadfasdfs");
 };
+export const addAddress = async (data) => {
+  const token = localStorage.getItem("authToken");
+  const userId = localStorage.getItem("userID");
+  const datas = { data, df };
+  const response = await axios.post(
+    `${API_BASE_URL}/api/auth/user/add-address`,
+    datas,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  console.log(response, "sadfasdfs");
+};

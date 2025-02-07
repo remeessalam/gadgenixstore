@@ -1,25 +1,44 @@
-import { useSelector, useDispatch } from "react-redux";
 import { FaRegTrashCan } from "react-icons/fa6";
-import { removeItem, updateQuantity } from "../store/cartSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { checkAuth } from "../API/authAPI";
 import useCartInitialization from "../Hooks/getUserCart";
 import { removeCartItemAPI } from "../API/cartAPI";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const CartItems = () => {
-  useCartInitialization();
-
-  const cartItems = useSelector((state) => state.cart.items);
-  const dispatch = useDispatch();
+  const { cartData, loading, error } = useCartInitialization();
+  const [cartItems, setCartItems] = useState(cartData?.products || []);
+  const [userID, setUserId] = useState(cartData?.userId || "");
   const navigate = useNavigate();
-  const handleUpdateQuantity = (id, newQuantity) => {
-    dispatch(updateQuantity({ id, quantity: newQuantity }));
+
+  // Update local state when cartData changes
+  useEffect(() => {
+    if (cartData?.products) {
+      setCartItems(cartData.products);
+      setUserId(cartData?.userId);
+    }
+  }, [cartData]);
+
+  const handleRemoveItem = async (id) => {
+    try {
+      const response = await removeCartItemAPI(id, userID);
+      if (response?.success) {
+        setCartItems((prevItems) =>
+          prevItems.filter((item) => item._id !== id)
+        );
+      }
+    } catch (error) {
+      console.error("Error removing item:", error);
+    }
   };
 
-  const handleRemoveItem = (id) => {
-    const response = removeCartItemAPI(id);
-    console.log(response, "ataldfasdf");
-    dispatch(removeItem(id));
+  const handleUpdateQuantity = (id, newQuantity) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      )
+    );
   };
 
   const calculateTotal = () => {
@@ -28,6 +47,7 @@ const CartItems = () => {
       0
     );
   };
+
   const readyToCheckOut = () => {
     if (checkAuth()) {
       navigate("/checkout");
@@ -36,12 +56,15 @@ const CartItems = () => {
     }
   };
 
-  console.log(cartItems, "asdfasdfas");
+  if (loading) return <p>Loading cart...</p>;
+  if (error) {
+    toast.error(error);
+  }
   return (
     <div className="">
-      <div className="bg-black  text-white spacebetween px-4">
+      <div className="bg-black text-white spacebetween px-4">
         {cartItems.length ? (
-          <div className=" wrapper bg-headerbgcolor rounded-lg">
+          <div className="wrapper bg-headerbgcolor rounded-lg">
             <div className="grid grid-cols-12 gap-4 py-4 text-sm font-medium uppercase">
               <div className="col-span-6 md:col-span-6">PRODUCT</div>
               <div className="col-span-2 text-right sm:grid hidden">PRICE</div>
@@ -56,7 +79,7 @@ const CartItems = () => {
                 <div
                   data-aos="fade-up"
                   key={item.id}
-                  className="sm:grid flex flex-col  sm:grid-cols-12 gap-4 py-4 items-center "
+                  className="sm:grid flex flex-col sm:grid-cols-12 gap-4 py-4 items-center "
                 >
                   <div className="col-span-6 md:col-span-6 flex sm:flex-row flex-col items-center gap-4">
                     <img
@@ -89,7 +112,7 @@ const CartItems = () => {
                       min="1"
                       value={item?.quantity}
                       onChange={(e) =>
-                        handleUpdateQuantity(item.id, e.target.value)
+                        handleUpdateQuantity(item.id, Number(e.target.value))
                       }
                       className="w-16 px-2 py-1 text-center text-black rounded"
                     />
@@ -100,7 +123,7 @@ const CartItems = () => {
                   </div>
                   <div className="col-span-1 flex justify-end items-start">
                     <button
-                      onClick={() => handleRemoveItem(item.id)}
+                      onClick={() => handleRemoveItem(item._id)}
                       className="text-gray-400 hover:text-white"
                     >
                       <FaRegTrashCan />
@@ -131,12 +154,7 @@ const CartItems = () => {
             </div>
           </div>
         ) : (
-          <div className="wrapper flex flex-col items-center justify-center min-h-[70vh]  text-center p-4">
-            {/* <img
-              src="https://via.placeholder.com/300"
-              alt="Empty Cart"
-              className="w-60 h-60 mb-4"
-            /> */}
+          <div className="wrapper flex flex-col items-center justify-center min-h-[70vh] text-center p-4">
             <h2 className="text-2xl font-bold text-gray-100 mb-2">
               Your Cart is Empty
             </h2>
