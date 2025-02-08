@@ -14,7 +14,7 @@ const ProductItem = () => {
   const { cartData, loading, error } = useCartInitialization();
   const { id } = useParams(); // Extract product name from URL
   const [product, setProduct] = useState(null);
-  const [cartItemAdded,setCartItemAdded]
+  const [cartItemAdded, setCartItemAdded] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
@@ -99,7 +99,7 @@ const ProductItem = () => {
     if (response?.success) {
       toast.success(response?.message);
       console.log(product.id, product.name);
-      setCartItemAdded(true)
+      setCartItemAdded(true);
       // dispatch(
       //   addToCart({
       //     userID: response?.cart?.userId,

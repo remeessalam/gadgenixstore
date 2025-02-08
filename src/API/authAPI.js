@@ -63,20 +63,11 @@ export const checkAuth = () => {
 
 export const getUser = async () => {
   const token = localStorage.getItem("authToken");
-  const response = await axios.post(`${API_BASE_URL}/api/auth/user`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  console.log(response, "sadfasdfs");
-};
-export const addAddress = async (data) => {
-  const token = localStorage.getItem("authToken");
   const userId = localStorage.getItem("userID");
-  const datas = { data, df };
+  console.log(userId, "asdfasdfasdfasdf");
   const response = await axios.post(
-    `${API_BASE_URL}/api/auth/user/add-address`,
-    datas,
+    `${API_BASE_URL}/api/auth/user`,
+    { userId },
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -84,4 +75,48 @@ export const addAddress = async (data) => {
     }
   );
   console.log(response, "sadfasdfs");
+  return response.data;
+};
+export const addAddress = async (data) => {
+  try {
+    const token = localStorage.getItem("authToken");
+    const userId = localStorage.getItem("userID");
+    const payload = { data, userId };
+
+    const response = await axios.post(
+      `${API_BASE_URL}/api/auth/user/add-address`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    console.log(response.data, "Response Data");
+    return response.data;
+  } catch (error) {
+    console.error("Error adding address:", error);
+    throw error;
+  }
+};
+export const deleteAddress = async (userId, addressId) => {
+  try {
+    const token = localStorage.getItem("authToken");
+
+    const response = await axios.delete(
+      `${API_BASE_URL}/api/auth/user/delete-address/${userId}/${addressId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    console.log(response.data, "Updated User After Deleting Address");
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting address:", error);
+    throw error;
+  }
 };

@@ -6,7 +6,7 @@ import { IoMdClose } from "react-icons/io";
 
 const Header = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [token, setToken] = useState(localStorage.getItem("authToken")); // Fetch token from localStorage initially
+  const [token, setToken] = useState(localStorage.getItem("authToken"));
 
   const toggleMobileNav = () => {
     setMobileNavOpen((prev) => !prev);
