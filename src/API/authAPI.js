@@ -1,7 +1,7 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
-const API_BASE_URL = "https://gadgenixstore-backend.vercel.app/";
+const API_BASE_URL = "https://gadgenixstore-backend.vercel.app";
 
 export const signUp = async (userDetails) => {
   try {
