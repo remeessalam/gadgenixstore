@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8080"; // Adjust based on your backend
+const API_BASE_URL = "https://gadgenixstore-backend.vercel.app/"; // Adjust based on your backend
 
 // 🔹 Async Thunk to Fetch Cart from Backend
 export const fetchCart = createAsyncThunk("cart/fetchCart", async (userId) => {
