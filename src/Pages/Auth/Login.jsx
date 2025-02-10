@@ -2,8 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../API/authAPI";
+import useAuthRedirect from "../../Hooks/useAuthRedirect";
 
 const Login = () => {
+  useAuthRedirect();
+
   const {
     register,
     handleSubmit,

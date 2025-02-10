@@ -9,13 +9,15 @@ import { addToCart } from "../store/cartSlice";
 import toast from "react-hot-toast";
 import { addToCartAPI } from "../API/cartAPI";
 import useCartInitialization from "../Hooks/getUserCart";
+import { useActionState } from "react";
 
 const ProductItem = () => {
   const { cartData, loading, error } = useCartInitialization();
+  const [cartDetails, setCartDetails] = useState(cartData || null);
   const { id } = useParams(); // Extract product name from URL
   const [product, setProduct] = useState(null);
   const [cartItemAdded, setCartItemAdded] = useState(false);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState({ white: 1, black: 1 });
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -30,12 +32,18 @@ const ProductItem = () => {
   const userId = useSelector((state) => state.userDetails.userId);
   console.log(userId, "asdfasdfsdf");
   const decreaseQuantity = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
+    setQuantity((prev) => {
+      if (prev[color] > 1) {
+        return { ...prev, [color]: prev[color] - 1 };
+      }
+      return prev;
+    });
   };
 
   const increaseQuantity = () => {
-    setQuantity(quantity + 1);
+    setQuantity((prev) => ({ ...prev, [color]: prev[color] + 1 }));
   };
+
   console.log(products, id, "asdfasd");
   useEffect(() => {
     if (cartData?.products) {
@@ -92,14 +100,14 @@ const ProductItem = () => {
       name: product.name,
       price: product.price,
       image: selectedImage,
-      quantity: quantity,
+      quantity: color === "white" ? quantity.white : quantity.black,
       color: color ? color : "",
     });
     console.log(response, "asdfasdfsadfs", response?.cart?.products);
     if (response?.success) {
       toast.success(response?.message);
       console.log(product.id, product.name);
-      setCartItemAdded(true);
+      setCartItems(response?.cart?.products);
       // dispatch(
       //   addToCart({
       //     userID: response?.cart?.userId,
@@ -108,7 +116,9 @@ const ProductItem = () => {
       // );
     }
   };
-  const isInCart = cartItems.some((item) => item.id === product.id);
+  const isInCart = cartItems.some(
+    (item) => item.id === product.id && item?.color === color
+  );
   const chooseProductColor = (color) => {
     setColor(color);
     color === "white"
@@ -117,7 +127,9 @@ const ProductItem = () => {
   };
   const addToCartHandlerButton = () => {
     const token = localStorage.getItem("authToken");
-    if (!token) {
+    const username = localStorage.getItem("user");
+    const userID = localStorage.getItem("userID");
+    if (!token || !username || !userID) {
       toast.error("please Login to contiune");
       return;
     }
@@ -221,7 +233,9 @@ const ProductItem = () => {
                 >
                   <FaMinus />
                 </button>
-                <span className="px-4">{quantity}</span>
+                <span className="px-4">
+                  {color === "white" ? quantity.white : quantity.black}
+                </span>
                 <button
                   onClick={increaseQuantity}
                   className="p-2 hover:bg-gray-800 rounded-r-md"
@@ -229,6 +243,7 @@ const ProductItem = () => {
                   <FaPlus />
                 </button>
               </div>
+
               {isInCart ? (
                 <button
                   onClick={() => navigate("/cart")}
@@ -241,7 +256,6 @@ const ProductItem = () => {
                 <button
                   // disabled={product?.stock}
                   onClick={addToCartHandlerButton}
-                  data-aos="fade-up"
                   className={`${
                     product?.stock
                       ? `bg-orange-500 hover:bg-orange-600 cursor-pointer`

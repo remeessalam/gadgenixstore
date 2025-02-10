@@ -12,7 +12,8 @@ export const signUp = async (userDetails) => {
 
     if (response.data.token) {
       localStorage.setItem("authToken", response.data.token);
-      localStorage.setItem("user", response.data.user.name);
+      localStorage.setItem("user", response.data.user.fullName);
+      localStorage.setItem("userID", response.data.user.id);
     }
 
     return response.data;

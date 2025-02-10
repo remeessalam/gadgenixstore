@@ -22,7 +22,11 @@ const useCartInitialization = () => {
           if (response?.success) {
             setCartData(response.cart);
           } else {
-            setError("Failed to fetch cart data.");
+            if (response.message === "Cart not found") {
+              return true;
+            } else {
+              setError("Failed to fetch cart data.");
+            }
           }
         } catch (err) {
           console.error("Error initializing cart:", err);

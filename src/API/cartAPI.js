@@ -16,6 +16,7 @@ export const addToCartAPI = async (cartItem) => {
 export const getCartAPI = async (userId) => {
   try {
     const response = await apiRequest("GET", `/api/cart/${userId}`);
+    console.log(response, "asdfasdfasdfsadf");
     return response; // Ensure response is returned properly
   } catch (error) {
     console.error("Error fetching cart:", error);
@@ -24,7 +25,7 @@ export const getCartAPI = async (userId) => {
 };
 export const removeCartItemAPI = async (productId, userID) => {
   try {
-    const response = await apiRequest("POST", `/api/cart/removecart`, {
+    const response = await apiRequest("POST", `/api/cart/removecartitem`, {
       productId,
       userID,
     });
@@ -34,3 +35,7 @@ export const removeCartItemAPI = async (productId, userID) => {
     throw error;
   }
 };
+
+// Delete the current user's cart
+export const deleteCart = async (cartId) =>
+  await apiRequest("POST", `/api/cart/deletecart`, { cartId });

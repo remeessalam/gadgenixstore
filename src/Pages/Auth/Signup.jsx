@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 import { signUp } from "../../API/authAPI";
+import useAuthRedirect from "../../Hooks/useAuthRedirect";
 
 const Signup = () => {
+  useAuthRedirect();
   const {
     register,
     handleSubmit,

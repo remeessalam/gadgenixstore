@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 // import { setUserDetails } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";
 // import { removeItem } from "../store/cartSlice";
@@ -7,16 +7,19 @@ import { useEffect, useState } from "react";
 import useCartInitialization from "../Hooks/getUserCart";
 import toast from "react-hot-toast";
 import { addAddress, deleteAddress, getUser } from "../API/authAPI";
-import { FiDelete } from "react-icons/fi";
 import { FaTrash } from "react-icons/fa";
 import { TiTick } from "react-icons/ti";
+import RazorpayModal from "./RazorpayModal";
+import { createOrder } from "../API/orderAPI";
+import { deleteCart } from "../API/cartAPI";
+import { sendOrderEmail } from "../helper";
 
 const CheckoutForm = () => {
   const { cartData, loading, error } = useCartInitialization();
   const [userDetails, setUserDetails] = useState(null);
   const [cartItems, setCartItems] = useState(cartData?.products || []);
   const [selectedAddress, setSelectedAddress] = useState(null);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
     register,
@@ -54,7 +57,7 @@ const CheckoutForm = () => {
 
     fetchUser();
   }, []);
-  console.log(userDetails, "asdfsdfasdf");
+  console.log(userDetails, cartData, "asdfsdfasdf");
   // if (cartItems?.length === 0) navigate("/products");
   const onSubmit = async (data) => {
     console.log(data, "asdfsdfasdfasdf");
@@ -84,6 +87,41 @@ const CheckoutForm = () => {
       toast.error("Failed to delete address");
     }
   };
+  const handlePaymentError = (errorMsg) => {
+    toast.error(errorMsg);
+  };
+  const handlePaymentSuccess = async (paymentResponse) => {
+    try {
+      console.log(paymentResponse, "razorpay payment response");
+      const orderData = {
+        userId: userDetails._id,
+        addressId: selectedAddress._id, // Adjust as needed
+        products: cartItems,
+      };
+      const orderResponse = await createOrder(orderData);
+      if (orderResponse.success) {
+        // Delete the current cart on the backend
+        await deleteCart(cartData._id);
+        toast.success("Payment Successful and Order Placed!");
+        navigate("/");
+        await sendOrderEmail({
+          user: userDetails,
+          address: userDetails.addresses[0], // Replace with the selected address if needed
+          products: cartItems,
+          orderId: orderResponse.order._id, // assuming your API returns the new order ID here
+          totalAmount: cartItems?.reduce(
+            (total, item) => total + item.price * item.quantity,
+            0
+          ),
+        });
+      } else {
+        toast.error("Order creation failed");
+      }
+    } catch (error) {
+      toast.error("Error while processing order");
+    }
+  };
+
   return (
     <div className=" bg-black spacebetween">
       <div className="max-w-[50rem] mx-auto px-4 ">
@@ -194,7 +232,7 @@ const CheckoutForm = () => {
 
             <div data-aos="fade-up" className="rounded bg-[#222] p-4">
               <h3 className="mb-2 font-medium text-white">Shipping Address</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2  gap-2">
                 {userDetails?.addresses?.map((obj) => (
                   <div
                     onClick={() => setSelectedAddress(obj)}
@@ -206,7 +244,11 @@ const CheckoutForm = () => {
                     }  p-2 rounded-lg`}
                   >
                     <div className="flex ">
-                      {selectedAddress?._id === obj._id && <TiTick />}
+                      {selectedAddress?._id === obj._id && (
+                        <div className="border bg-white text-black">
+                          <TiTick />
+                        </div>
+                      )}
                       <FaTrash
                         className="ml-auto"
                         onClick={() => handleDeleteAddress(obj._id)}
@@ -219,6 +261,7 @@ const CheckoutForm = () => {
                     <div>{obj.state}</div>
                     <div>{obj.country}</div>
                     <div>{obj.zip}</div>
+                    <div>{obj.notes}</div>
                   </div>
                 ))}
               </div>
@@ -232,9 +275,19 @@ const CheckoutForm = () => {
               Your Experience Throughout This Website.
             </p>
 
-            <button data-aos="fade-up" type="submit" className="primary-btn">
+            <RazorpayModal
+              amount={cartItems.reduce(
+                (total, item) => total + item.price * item.quantity,
+                0
+              )}
+              userDetails={userDetails}
+              onPaymentSuccess={handlePaymentSuccess}
+              onPaymentError={handlePaymentError}
+              selectedAddress={selectedAddress}
+            />
+            {/* <button data-aos="fade-up" type="submit" className="primary-btn">
               Place Order
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

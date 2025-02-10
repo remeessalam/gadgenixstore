@@ -107,15 +107,19 @@ const CartItems = () => {
                   </div>
                   <h1 className="sm:hidden flex">Quantity</h1>
                   <div className="col-span-2 flex justify-center">
-                    <input
+                    <div className="bg-white px-4 text-center rounded-lg py-1 text-black">
+                      {item?.quantity}
+                    </div>
+                    {/* <input
                       type="number"
                       min="1"
                       value={item?.quantity}
-                      onChange={(e) =>
-                        handleUpdateQuantity(item.id, Number(e.target.value))
-                      }
+                      disabled
+                      // onChange={(e) =>
+                      //   handleUpdateQuantity(item.id, Number(e.target.value))
+                      // }
                       className="w-16 px-2 py-1 text-center text-black rounded"
-                    />
+                    /> */}
                   </div>
                   <div className="col-span-1 text-right">
                     <h1 className="sm:hidden flex">Total</h1>₹

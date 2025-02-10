@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { logo, routes } from "../constant";
 import { TiThMenu } from "react-icons/ti";
@@ -7,7 +7,9 @@ import { IoMdClose } from "react-icons/io";
 const Header = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [token, setToken] = useState(localStorage.getItem("authToken"));
-
+  useEffect(() => {
+    setToken(localStorage.getItem("authToken"));
+  }, [token]);
   const toggleMobileNav = () => {
     setMobileNavOpen((prev) => !prev);
   };
@@ -18,6 +20,8 @@ const Header = () => {
 
   const logout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("user");
+    localStorage.removeItem("userID");
     setToken(null);
   };
 

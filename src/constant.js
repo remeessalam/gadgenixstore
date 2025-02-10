@@ -79,7 +79,9 @@ export const routes = [
   { name: "Contact Us", path: "/contact-us" },
   // { name: "Login", path: "/login" },
 ];
-
+export const companyDetails = {
+  email: "remeesreme4u@gmail.com",
+};
 export const categories = [
   { name: "Smart Home Devices", icon: smarthome },
   {
