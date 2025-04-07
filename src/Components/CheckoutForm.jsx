@@ -13,12 +13,16 @@ import RazorpayModal from "./RazorpayModal";
 import { createOrder } from "../API/orderAPI";
 import { deleteCart } from "../API/cartAPI";
 import { sendOrderEmail } from "../helper";
+import ShimmerUI from "./ShimmerUI";
+import RotatingBorderLoader from "./SmallRoundingShimmer";
 
 const CheckoutForm = () => {
   const { cartData, loading, error } = useCartInitialization();
   const [userDetails, setUserDetails] = useState(null);
   const [cartItems, setCartItems] = useState(cartData?.products || []);
   const [selectedAddress, setSelectedAddress] = useState(null);
+  const [addAddressLoading, setAddAddressLoading] = useState(false);
+  const [deleteaddressLoading, setDeleteAddressLoading] = useState(false);
   // const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
@@ -33,7 +37,8 @@ const CheckoutForm = () => {
       setCartItems(cartData.products);
       // setUserId(cartData?.userId);
     }
-  }, [cartData]);
+  }, [cartData, selectedAddress]);
+
   const getUserDetails = async () => {
     try {
       const user = await getUser(); // Wait for the API response
@@ -57,9 +62,19 @@ const CheckoutForm = () => {
 
     fetchUser();
   }, []);
+
+  if (loading)
+    return (
+      <p>
+        <ShimmerUI />
+      </p>
+    );
+
   console.log(userDetails, cartData, "asdfsdfasdf");
   // if (cartItems?.length === 0) navigate("/products");
   const onSubmit = async (data) => {
+    if (addAddressLoading) return;
+    setAddAddressLoading(true);
     console.log(data, "asdfsdfasdfasdf");
     // dispatch(setUserDetails(data));
     const response = await addAddress(data);
@@ -68,22 +83,31 @@ const CheckoutForm = () => {
       setUserDetails(response.user); // Update UI with new user details
       console.log("Order Response:", response);
       toast.success("address added successfully");
+      setAddAddressLoading(false);
       reset(); // Reset the form after submission
     } else {
+      setAddAddressLoading(false);
       toast.error("Failed to place order. Please try again.");
     }
   };
   console.log(cartItems);
-  if (loading) return <p>Loading cart...</p>;
+
   if (error) {
     toast.error(error);
   }
   const handleDeleteAddress = async (addressId) => {
     try {
+      setDeleteAddressLoading(true);
       const updatedUser = await deleteAddress(userDetails._id, addressId);
       setUserDetails(updatedUser.user); // Update UI with new user details
       toast.success("Address deleted successfully");
-    } catch (error) {
+      setDeleteAddressLoading(false);
+    } catch (
+      //eslint-disable-next-line
+      error
+    ) {
+      setDeleteAddressLoading(false);
+
       toast.error("Failed to delete address");
     }
   };
@@ -117,7 +141,10 @@ const CheckoutForm = () => {
       } else {
         toast.error("Order creation failed");
       }
-    } catch (error) {
+    } catch (
+      //eslint-disable-next-line
+      error
+    ) {
       toast.error("Error while processing order");
     }
   };
@@ -185,8 +212,11 @@ const CheckoutForm = () => {
                 className="w-full rounded border border-gray-700 bg-[#1a1a1a] p-2.5 text-white focus:border-orange-500 focus:outline-none"
               />
             </div>
-            <button data-aos="fade-up" type="submit" className="primary-btn">
-              Add Address
+            <button
+              type="submit"
+              className={`primary-btn ${addAddressLoading && `!bg-primary/50`}`}
+            >
+              {addAddressLoading ? "Adding Address..." : "Add Address"}
             </button>
           </div>
         </form>
@@ -249,10 +279,16 @@ const CheckoutForm = () => {
                           <TiTick />
                         </div>
                       )}
-                      <FaTrash
-                        className="ml-auto"
-                        onClick={() => handleDeleteAddress(obj._id)}
-                      />
+                      {deleteaddressLoading ? (
+                        <div className="ml-auto">
+                          <RotatingBorderLoader size="xs" />
+                        </div>
+                      ) : (
+                        <FaTrash
+                          className="ml-auto"
+                          onClick={() => handleDeleteAddress(obj._id)}
+                        />
+                      )}
                     </div>
 
                     <div>{obj.name}</div>

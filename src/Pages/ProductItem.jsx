@@ -4,19 +4,21 @@ import { FaStar, FaPlus, FaMinus } from "react-icons/fa";
 import { products } from "../constant";
 import ReactPlayer from "react-player";
 import { BsPause, BsPlay } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../store/cartSlice";
+import { useSelector } from "react-redux";
+// import { addToCart } from "../store/cartSlice";
 import toast from "react-hot-toast";
 import { addToCartAPI } from "../API/cartAPI";
 import useCartInitialization from "../Hooks/getUserCart";
-import { useActionState } from "react";
+// import { useActionState } from "react";
+// import ShimmerUI from "../Components/ShimmerUI";
+import ProductDetailsShimmer from "../Components/ProductDetailsShimmer";
 
 const ProductItem = () => {
   const { cartData, loading, error } = useCartInitialization();
-  const [cartDetails, setCartDetails] = useState(cartData || null);
+  // const [cartDetails, setCartDetails] = useState(cartData || null);
   const { id } = useParams(); // Extract product name from URL
   const [product, setProduct] = useState(null);
-  const [cartItemAdded, setCartItemAdded] = useState(false);
+  // const [cartItemAdded, setCartItemAdded] = useState(false);
   const [quantity, setQuantity] = useState({ white: 1, black: 1 });
   const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ const ProductItem = () => {
   const [showThumbnail, setShowThumbnail] = useState(true);
   const [color, setColor] = useState("white");
   const [cartItems, setCartItems] = useState(cartData?.products || []);
-
+  const [buttonloading, setButtonLoading] = useState(false);
   // const dispatch = useDispatch();
   // const cartItems = useSelector((state) => state.cart.items);
   const userId = useSelector((state) => state.userDetails.userId);
@@ -61,7 +63,12 @@ const ProductItem = () => {
     setSelectedImage(foundProduct.images[0]);
     setSelectedVideo(foundProduct?.videos ? foundProduct?.videos[0] : "null");
   }, [id]);
-  if (!product) return <div>Loading...</div>; // Handle if product is not found
+  if (!product)
+    return (
+      <div>
+        <ProductDetailsShimmer />
+      </div>
+    ); // Handle if product is not found
   console.log(product);
   const redirect = (productname) => {
     navigate(`/product/${productname}`);
@@ -93,6 +100,10 @@ const ProductItem = () => {
   };
 
   const addToCartHandler = async () => {
+    console.log(buttonloading, "addtotcarthigtisf");
+    if (buttonloading) {
+      return;
+    }
     console.log(product, "asdfasdfs");
     const response = await addToCartAPI({
       userID: userId,
@@ -108,6 +119,8 @@ const ProductItem = () => {
       toast.success(response?.message);
       console.log(product.id, product.name);
       setCartItems(response?.cart?.products);
+      setButtonLoading(false);
+
       // dispatch(
       //   addToCart({
       //     userID: response?.cart?.userId,
@@ -126,20 +139,30 @@ const ProductItem = () => {
       : setSelectedImage(product.images[5]);
   };
   const addToCartHandlerButton = () => {
+    if (buttonloading) return;
+    setButtonLoading(true);
     const token = localStorage.getItem("authToken");
     const username = localStorage.getItem("user");
     const userID = localStorage.getItem("userID");
     if (!token || !username || !userID) {
       toast.error("please Login to contiune");
+      setButtonLoading(false);
       return;
     }
     product?.stock && addToCartHandler();
+    // setButtonLoading(false);
   };
 
-  if (loading) return <p>Loading cart...</p>;
+  if (loading)
+    return (
+      <p>
+        <ProductDetailsShimmer />
+      </p>
+    );
   if (error) {
     toast.error(error);
   }
+
   return (
     <div>
       <div className="bg-black text-white pt-[96px] sm:pt-[112px]">
@@ -254,15 +277,15 @@ const ProductItem = () => {
                 </button>
               ) : (
                 <button
-                  // disabled={product?.stock}
-                  onClick={addToCartHandlerButton}
+                  disabled={buttonloading}
+                  onClick={!buttonloading && addToCartHandlerButton}
                   className={`${
                     product?.stock
                       ? `bg-orange-500 hover:bg-orange-600 cursor-pointer`
                       : `bg-orange-500/40 text-white/30 cursor-not-allowed`
                   } text-white px-6 py-2 rounded-md `}
                 >
-                  🛒 Add To Cart
+                  {buttonloading ? "🛒 Adding To Cart..." : "🛒 Add To Cart"}
                 </button>
               )}
             </div>

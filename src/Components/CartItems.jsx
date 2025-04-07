@@ -5,13 +5,15 @@ import useCartInitialization from "../Hooks/getUserCart";
 import { removeCartItemAPI } from "../API/cartAPI";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import ShimmerUI from "./ShimmerUI";
+import RotatingBorderLoader from "./SmallRoundingShimmer";
 
 const CartItems = () => {
   const { cartData, loading, error } = useCartInitialization();
   const [cartItems, setCartItems] = useState(cartData?.products || []);
   const [userID, setUserId] = useState(cartData?.userId || "");
   const navigate = useNavigate();
-
+  const [buttonLoading, setButtonLoading] = useState(false);
   // Update local state when cartData changes
   useEffect(() => {
     if (cartData?.products) {
@@ -22,24 +24,28 @@ const CartItems = () => {
 
   const handleRemoveItem = async (id) => {
     try {
+      if (buttonLoading) return;
+      setButtonLoading(true);
       const response = await removeCartItemAPI(id, userID);
       if (response?.success) {
         setCartItems((prevItems) =>
           prevItems.filter((item) => item._id !== id)
         );
+        setButtonLoading(false);
       }
     } catch (error) {
+      setButtonLoading(false);
       console.error("Error removing item:", error);
     }
   };
 
-  const handleUpdateQuantity = (id, newQuantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
+  // const handleUpdateQuantity = (id, newQuantity) => {
+  //   setCartItems((prevItems) =>
+  //     prevItems.map((item) =>
+  //       item.id === id ? { ...item, quantity: newQuantity } : item
+  //     )
+  //   );
+  // };
 
   const calculateTotal = () => {
     return cartItems.reduce(
@@ -56,7 +62,12 @@ const CartItems = () => {
     }
   };
 
-  if (loading) return <p>Loading cart...</p>;
+  if (loading)
+    return (
+      <p>
+        <ShimmerUI />
+      </p>
+    );
   if (error) {
     toast.error(error);
   }
@@ -126,12 +137,16 @@ const CartItems = () => {
                     {(item.price * item.quantity).toFixed(2)}
                   </div>
                   <div className="col-span-1 flex justify-end items-start">
-                    <button
-                      onClick={() => handleRemoveItem(item._id)}
-                      className="text-gray-400 hover:text-white"
-                    >
-                      <FaRegTrashCan />
-                    </button>
+                    {buttonLoading ? (
+                      <RotatingBorderLoader size={"xs"} />
+                    ) : (
+                      <button
+                        onClick={() => handleRemoveItem(item._id)}
+                        className="text-gray-400 hover:text-white"
+                      >
+                        <FaRegTrashCan />
+                      </button>
+                    )}
                   </div>
                 </div>
               ))}

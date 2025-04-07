@@ -1,14 +1,17 @@
-import React from "react";
 import toast from "react-hot-toast";
 
 const RazorpayModal = ({
-  amount, // Amount in INR (will be converted to paise)
-  userDetails, // Object containing user's fullName, email, mobile, etc.
-  onPaymentSuccess, // Callback function when payment is successful
-  onPaymentError, // Callback function if the payment fails or the script doesn't load
+  //eslint-disable-next-line
+  amount,
+  //eslint-disable-next-line
+  userDetails,
+  //eslint-disable-next-line
+  onPaymentSuccess,
+  //eslint-disable-next-line
+  onPaymentError,
+  //eslint-disable-next-line
   selectedAddress,
 }) => {
-  // Utility function to load the Razorpay checkout script dynamically
   const loadScript = (src) => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -19,7 +22,6 @@ const RazorpayModal = ({
     });
   };
 
-  // Open Razorpay modal with the provided options
   const openRazorpay = async () => {
     if (!selectedAddress) {
       toast.error("Please Add Address");
@@ -33,20 +35,21 @@ const RazorpayModal = ({
       return;
     }
 
-    // Configure your Razorpay options. Replace "YOUR_RAZORPAY_KEY" with your actual key.
     const options = {
       key: "rzp_test_UDW3KoSzU0IARV", // Your Razorpay API key
-      amount: amount * 100, // Amount is in paise
+      amount: amount * 100,
       currency: "INR",
       name: "Your Company Name",
       description: "Order Transaction",
       handler: (response) => {
-        // Payment successful callback; pass the response to the parent component
         onPaymentSuccess(response);
       },
       prefill: {
+        //eslint-disable-next-line
         name: userDetails?.fullName || "",
+        //eslint-disable-next-line
         email: userDetails?.email || "",
+        //eslint-disable-next-line
         contact: userDetails?.mobile || "",
       },
       theme: {
