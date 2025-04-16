@@ -35,8 +35,9 @@ const RazorpayModal = ({
       return;
     }
 
+    // key: "rzp_test_UDW3KoSzU0IARV", // Your Razorpay API key
     const options = {
-      key: "rzp_test_UDW3KoSzU0IARV", // Your Razorpay API key
+      key: "rzp_live_8ptSVA4ZRmOESw", // Your Razorpay API key
       amount: amount * 100,
       currency: "INR",
       name: "Your Company Name",
