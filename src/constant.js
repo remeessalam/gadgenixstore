@@ -80,7 +80,7 @@ export const routes = [
   // { name: "Login", path: "/login" },
 ];
 export const companyDetails = {
-  email: "gadgetsstore@gmail.com",
+  email: "gadgenixstore@gmail.com",
 };
 export const categories = [
   { name: "Smart Home Devices", icon: smarthome },
