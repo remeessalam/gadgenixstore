@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { cantactusimage, contactusicons } from "../constant";
+import { cantactusimage, companyDetails, contactusicons } from "../constant";
 import { IoLocationSharp, IoMail } from "react-icons/io5";
 import { BiSolidPhoneCall } from "react-icons/bi";
 
@@ -62,7 +62,7 @@ const ContactForm = () => {
                 <IoMail className="text-white textwithshadow" />
 
                 <p className="text-white textwithshadow">
-                  Mail-Gadgetsstore@gmail.Com
+                  Mail-{companyDetails.email}
                 </p>
               </div>
             </div>
